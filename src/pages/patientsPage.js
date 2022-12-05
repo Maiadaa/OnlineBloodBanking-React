@@ -1,7 +1,40 @@
-import { useState } from "react";
+import { useEffect,useState } from "react";
+import PatientsList from "../components/patients/PatientsList";
 
-const patientsPage = () => {
-    return <div></div>;
+const PatientsPage = () => {
+    const [Patients, setPatients] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(()=> {
+        const fetchAbortController = new AbortController();
+        const fetchSignal = fetchAbortController.signal;
+        const fetchPatients = async () => {
+            try{
+            const response = await fetch('http://localhost:3000/patient',{
+                signal: fetchSignal
+            });
+            const data = await response.json();
+            if(!response.ok){
+                throw Error(data.error);
+            }
+            setPatients(data.patietns);
+            setIsLoading(false);
+            }catch(err){
+                console.log(err.message);
+            }
+        };
+        fetchPatients();
+        fetchAbortController.abort();
+    },
+    []
+    );
+    if(isLoading){
+        return (<p>please wait whilce we are loading data...</p>);
+    }
+    return (
+        <div className="flex flex-col item-center justify-center">
+            <PatientsList Patients={Patients}/>
+        </div>
+    );
 };
 
-export default patientsPage;
+export default PatientsPage;
