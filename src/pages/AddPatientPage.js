@@ -35,9 +35,9 @@ const AddPatientPage = () => {
     }
     return (
         <div>
-            <AddNewPatient hospitals={Hospitals}/>
+            <AddNewPatient hospitals={Hospitals} />
         </div>
     );
-}
+};
 
 export default AddPatientPage;
