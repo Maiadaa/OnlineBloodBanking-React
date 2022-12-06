@@ -1,21 +1,24 @@
+import TableDesign from "../../UI/tablesUI/TableDesign";
+import HeaderDesign from "../../UI/tablesUI/HeaderDesign";
+import HeaderTh from "../../UI/tablesUI/HeaderTh";
+import BodyDesign from "../../UI/tablesUI/BodyDesign";
+import BodyTdDesign from "../../UI/tablesUI/BodyTdDeisgn";
 import Card from "../../UI/cards/Card";
-import CardHeader from "../../UI/cards/CardHeader";
-import CardBody from "../../UI/cards/CardBody";
-import CardActions from "../../UI/cards/CardActions";
 
 const ViewPatients = (props) => {
     return(
-        <Card>
-            <p>
-                {props.Patient.name}
-                {props.Patient.email}
-                {props.Patient.PhoneNumber}
-                {props.Patient.Address}
-                {props.Patient.Condition}
-                {props.Patient.BloodType}
-                {props.Patient.hospitalId}
-            </p>
-        </Card>
+
+            <tr>
+                <BodyTdDesign>{props.Patient.name}</BodyTdDesign>
+                <BodyTdDesign>{props.Patient.email}</BodyTdDesign>
+                <BodyTdDesign>{props.Patient.PhoneNumber}</BodyTdDesign>
+                <BodyTdDesign>{props.Patient.Address}</BodyTdDesign>
+                <BodyTdDesign>{props.Patient.Condition}</BodyTdDesign>
+                <BodyTdDesign>{props.Patient.BloodType}</BodyTdDesign>
+                <BodyTdDesign>{props.Patient.hospitalId}</BodyTdDesign>
+                <BodyTdDesign><a>Update</a></BodyTdDesign>
+                <BodyTdDesign><a>Delete</a></BodyTdDesign>
+            </tr>
     );
 };
 

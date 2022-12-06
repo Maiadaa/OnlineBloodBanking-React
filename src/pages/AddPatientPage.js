@@ -1,22 +1,22 @@
-import { useEffect,useState } from "react";
-import PatientsList from "../components/patients/PatientsList";
+import { useState, useEffect } from "react";
+import AddNewPatient from "../components/patients/AddNewPatient";
 
-const PatientsPage = () => {
-    const [Patients, setPatients] = useState([]);
+const AddPatientPage = () => {
+    const [Hospitals, setHospitals] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(()=> {
         const fetchAbortController = new AbortController();
         const fetchSignal = fetchAbortController.signal;
         const fetchPatients = async () => {
             try{
-            const response = await fetch('http://localhost:3000/patient',{
+            const response = await fetch('http://localhost:3000/hospitals',{
                 signal: fetchSignal
             });
             const data = await response.json();
             if(!response.ok){
                 throw Error(data.error);
             }
-            setPatients(data.patietns);
+            setHospitals(data.hospitals);
             setIsLoading(false);
             }catch(err){
                 console.log(err.message);
@@ -35,9 +35,9 @@ const PatientsPage = () => {
     }
     return (
         <div>
-            <PatientsList Patients={Patients}/>
+            <AddNewPatient hospitals={Hospitals}/>
         </div>
     );
-};
+}
 
-export default PatientsPage;
+export default AddPatientPage;
