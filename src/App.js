@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PatientsPage from "./pages/PatientsPage";
 import AddPatientPage from "./pages/AddPatientPage";
+import HospitalsPage from "./pages/HospitaslPage";
 
 function App() {
   return (
@@ -15,6 +16,11 @@ function App() {
         <Route path="/AddNewPatient" element={
           <div className="flex justify-center">
           <AddPatientPage />
+        </div>
+        }/>
+        <Route path="/getAllHospitals" element={
+          <div className="flex justify-center">
+          <HospitalsPage />
         </div>
         }/>
       </Routes>

@@ -6,6 +6,19 @@ import BodyTdDesign from "../../UI/tablesUI/BodyTdDeisgn";
 import Card from "../../UI/cards/Card";
 
 const ViewPatients = (props) => {
+
+    /*const navigate = useNavigate();
+ 
+    const viewBtnHandler = () => {
+        navigate(`/hospitals/report/${props.hospital._id}`);
+    };
+    const editBtnHandler = () => {
+        navigate(`/hospitals/editHospital/${props.hospital._id}`);
+    };
+    const deleteBtnHandler = () => {
+        navigate(`/hospitals/${props.hospital._id}`);
+    };*/
+
     return(
 
             <tr>
