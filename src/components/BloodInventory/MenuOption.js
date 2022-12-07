@@ -1,4 +1,4 @@
-import UserHeader from '../UI/BloodBagsUI/UserHeader';
+/*import UserHeader from '../UI/BloodBagsUI/UserHeader';
 import Card from '../UI/BloodBagsUI/CardBloodBankMenu/Card';
 import CardHeader from '../UI/BloodBagsUI/CardBloodBankMenu/CardHeader';
 import CardBody from '../UI/BloodBagsUI/CardBloodBankMenu/CardBody';
@@ -30,4 +30,4 @@ const MenuOption = (props) =>
         </Card>
     );
 };
-export default MenuOption;
+export default MenuOption;*/
