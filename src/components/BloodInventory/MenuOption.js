@@ -1,17 +1,16 @@
-import UserHeader from '../UI/BloodBagsUI/UserHeader';
-import Card from '../UI/BloodBagsUI/CardBloodBankMenu/Card';
-import CardHeader from '../UI/BloodBagsUI/CardBloodBankMenu/CardHeader';
-import CardBody from '../UI/BloodBagsUI/CardBloodBankMenu/CardBody';
-import CardActions from '../UI/BloodBagsUI/CardBloodBankMenu/CardActions';
+import Card from '../../UI/BloodBagsUI/MenuCard/Card';
+import CardHeader from '../../UI/BloodBagsUI/MenuCard/CardHeader';
+import CardBody from '../../UI/BloodBagsUI/MenuCard/CardBody';
+import CardActions from '../../UI/BloodBagsUI/MenuCard/CardActions';
 
 const MenuOption = (props) =>
 {
     return(
         <Card>
-            <UserHeader>
+           {/*  <UserHeader>
                 <h1 className="text-gray-900 text-xl font-medium mb-2"> Welcome {props.UserInfo.UserName} </h1>
                 <h3 className="text-gray-900 text-xl font-medium mb-2"> You are operting for the hospital with the ID of {props.UserInfo.HospitalID}</h3>
-            </UserHeader>
+            </UserHeader> */}
             <CardHeader>
                 <img className="rounded-t-lg"
                     src={props.Option.ImgURL}

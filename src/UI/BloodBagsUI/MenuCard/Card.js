@@ -1,9 +1,9 @@
 const CardBloodBankMenu = (props) =>
 {
-    return
-    (
+    return(
      <div class="flex justify-center">
        {props.children}
       </div>
     );
 };
+export default CardBloodBankMenu;

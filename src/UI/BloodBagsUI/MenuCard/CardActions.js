@@ -1,9 +1,9 @@
 const CardBloodBankMenuActions = (props) =>
 {
-    return
-    (
+    return(
         <div class="justify-center">
        {props.children}
       </div>
     );
 };
+export default CardBloodBankMenuActions;
