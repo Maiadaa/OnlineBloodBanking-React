@@ -14,7 +14,7 @@ function App() {
         </div>
         }/>
         <Route path="/AddNewPatient" element={
-          <div className="flex justify-center">
+          <div className="flex justify-center bg-gray-50 ">
           <AddPatientPage />
         </div>
         }/>
