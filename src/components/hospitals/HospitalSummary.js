@@ -21,31 +21,38 @@ const HospitalSummary = (props) => {
     return (
         <Card>
             <CardHeader>
-                <h2 className='font-bold'>
-                    {props.hospital.name}
-                </h2>
+            <img
+            className="object-scale-down h-[200px]"
+            src={props.hospital.imageURL}
+            alt={props.hospital.name}
+            />
             </CardHeader>
             <CardBody>
+                <h1 className='font-bold'>
+                    {props.hospital.name}
+                </h1>
                 <h3>{props.hospital.email}</h3>
                 <h3>{props.hospital.hotline}</h3>
                 <h3>{props.hospital.Address}</h3> 
             </CardBody>
             <CardActions>
                 <button 
-                className="bg-white py-3 px-10 font-bold rounded-xl"
-                onClick={viewBtnHandler}    
-                > 
-                    View Report
-                </button>
-                <button 
-                className="bg-white py-3 px-10 font-bold rounded-xl"
+                className="bg-white py-3 px-5 font-bold rounded-xl float-left"
                 onClick ={editBtnHandler}> 
                     Edit Hospital
                 </button>
                 <button 
-                className="bg-white py-3 px-10 font-bold rounded-xl"
+                className="bg-white py-3 px-5 font-bold rounded-xl"
                 onClick={deleteBtnHandler}> 
                     Delete Hospital
+                </button>
+            </CardActions>
+            <CardActions>
+                <button 
+                className="bg-white py-3 px-20 font-bold rounded-xl mb-8"
+                onClick={viewBtnHandler}    
+                > 
+                View Report
                 </button>
             </CardActions>
         </Card>

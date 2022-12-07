@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PatientsPage from "./pages/PatientsPage";
 import AddPatientPage from "./pages/AddPatientPage";
-import HospitalsPage from "./pages/HospitaslPage";
+import HospitalsPage from "./pages/HospitalsPage";
 import LabAdminHomePage from "./pages/LabAdminHomePage";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <AddPatientPage />
         </div>
         }/>
-        <Route path="/getAllHospitals" element={
+        <Route path="/hospitals" element={
           <div className="flex justify-center">
           <HospitalsPage />
         </div>
