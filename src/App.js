@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PatientsPage from "./pages/PatientsPage";
+import PatientsPage from "./pages/patientsPage";
 import AddPatientPage from "./pages/AddPatientPage";
 import HospitalsPage from "./pages/HospitalsPage";
 import LabAdminHomePage from "./pages/LabAdminHomePage";
+import LabManagrHomePage from "./pages/LabManagerHomePage";
 import MakeRequestPage from "./pages/MakeRequestPage";
 
 function App() {
@@ -28,6 +29,21 @@ function App() {
         <Route path="/patients/makeRequest" element={
           <div className="flex justify-center">
           <MakeRequestPage />
+        </div>
+        }/>
+         <Route path="LabAdminMenu" element={
+          <div className="flex justify-center">
+          <LabAdminHomePage />
+        </div>
+        }/>
+        <Route path="LabManagerMenu" element={
+          <div className="flex justify-center">
+          <LabManagrHomePage />
+        </div>
+        }/>
+        <Route path="InsertBloodBag" element={
+          <div className="flex justify-center">
+          <LabManagrHomePage />
         </div>
         }/>
       </Routes>

@@ -5,21 +5,18 @@ import CardActions from '../../UI/BloodBagsUI/MenuCard/CardActions';
 
 const MenuOption = (props) =>
 {
+    console.log(props);
     return(
-        <Card>
-           {/*  <UserHeader>
-                <h1 className="text-gray-900 text-xl font-medium mb-2"> Welcome {props.UserInfo.UserName} </h1>
-                <h3 className="text-gray-900 text-xl font-medium mb-2"> You are operting for the hospital with the ID of {props.UserInfo.HospitalID}</h3>
-            </UserHeader> */}
+        <Card> 
             <CardHeader>
                 <img className="rounded-t-lg"
-                    src={props.Option.ImgURL}
-                    alt={props.Option.OptionName}
+                    src={props.option.ImgURL}
+                    alt={props.option.optionName}
                     />
             </CardHeader>
             <CardBody>
-                <h5 className="text-gray-900 text-xl font-medium mb-2">{props.Option.OptionName}</h5>
-                <p className="text-gray-700 text-base mb-4">{props.Option.OptionDesc}</p>
+                <h5 className="text-gray-900 text-xl font-medium mb-2 ">{props.option.optionName}</h5>
+                <p className="text-gray-700 text-base mb-4">{props.option.optionDesc}</p>
             </CardBody>
             <CardActions>
                 <button type = "button" className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight

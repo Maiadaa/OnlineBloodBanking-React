@@ -1,7 +1,7 @@
 const CardBloodBankMenuHeader = (props) =>
 {
     return(
-        <div class="rounded-lg shadow-lg bg-white max-w-sm">
+        <div className="rounded-lg shadow-lg bg-white max-w-sm">
        {props.children}
       </div>
     );

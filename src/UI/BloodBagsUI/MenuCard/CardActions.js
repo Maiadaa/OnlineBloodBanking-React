@@ -1,7 +1,7 @@
 const CardBloodBankMenuActions = (props) =>
 {
     return(
-        <div class="justify-center">
+        <div className="">
        {props.children}
       </div>
     );

@@ -1,7 +1,7 @@
 const CardBloodBankMenu = (props) =>
 {
     return(
-     <div class="flex justify-center">
+     <div className="inline justify-center">
        {props.children}
       </div>
     );
