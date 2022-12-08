@@ -3,6 +3,7 @@ import PatientsPage from "./pages/PatientsPage";
 import AddPatientPage from "./pages/AddPatientPage";
 import HospitalsPage from "./pages/HospitalsPage";
 import LabAdminHomePage from "./pages/LabAdminHomePage";
+import MakeRequestPage from "./pages/MakeRequestPage";
 
 function App() {
   return (
@@ -22,6 +23,11 @@ function App() {
         <Route path="/hospitals" element={
           <div className="flex justify-center">
           <HospitalsPage />
+        </div>
+        }/>
+        <Route path="/patients/makeRequest" element={
+          <div className="flex justify-center">
+          <MakeRequestPage />
         </div>
         }/>
       </Routes>

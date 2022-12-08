@@ -1,9 +1,9 @@
 const CardBloodBankMenuBody = (props) =>
 {
-    return
-    (
+    return(
         <div class="p-6">
        {props.children}
       </div>
     );
 };
+export default CardBloodBankMenuBody;
