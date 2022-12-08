@@ -51,7 +51,7 @@ const HospitalsPage = () => {
 
     return (
         <div className="flex flex-col items-center justify-center">
-            <HospitalsList Hospitals={hospitals} />
+            <HospitalsList hospitals={hospitals} />
         </div>
     );
 };

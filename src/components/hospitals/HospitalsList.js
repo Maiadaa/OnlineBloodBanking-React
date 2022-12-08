@@ -1,14 +1,11 @@
-import HospitalSummary from "./HospitalSummary";
+import HospitalCard from "./HospitalCard";
 
 const HospitalsList = (props) =>{
     return (
         <div className="justify-center items-center">
-            {
-                props.Hospitals.map((h) =>( 
-                <HospitalSummary hospital={h} key={h._id} />
-                ))
-            }
-
+            {props.hospitals.map((h) => ( 
+                <HospitalCard hospital={h} key={h._id} />
+            ))}
         </div>
     );
 };
