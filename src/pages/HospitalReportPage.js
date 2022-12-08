@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import InventoryReportTable from '../components/hospitals/InventoryReportTable';
-import DonationReportTable from '../components/hospitals/DonationReportTable';
-import ReportIntro from '../components/hospitals/ReportIntro';
-import ReportSummary from '../components/hospitals/ReportSummary';
+import HospitalReport from '../components/hospitals/hospitalReport/HospitalReport';
 
 const HospitalReportPage = () => {
   const [report, setReport] = useState(null);
@@ -53,12 +50,7 @@ const HospitalReportPage = () => {
   }
 
   return(
-    <div>
-    <ReportIntro report={report}/>
-    <InventoryReportTable report={report.inventoryReport}/>
-    <DonationReportTable report={report.donationReport}/> 
-    <ReportSummary report={report}/>
-    </div>
+    <HospitalReport report={report}/>
   );
 };
 

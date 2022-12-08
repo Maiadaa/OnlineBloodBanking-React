@@ -1,6 +1,6 @@
-import BodyTdDesign from '../../UI/tablesUI/BodyTdDesign';
+import BodyTdDesign from '../../../UI/tablesUI/BodyTdDesign';
 
-const ReportRow = (props) => {
+const InventoryReportRow = (props) => {
     return(
         <tr>
             <BodyTdDesign>{props.report.inventoryBagsCnt}</BodyTdDesign>
@@ -11,4 +11,4 @@ const ReportRow = (props) => {
         </tr>
     );
 };
-export default ReportRow;
+export default InventoryReportRow;

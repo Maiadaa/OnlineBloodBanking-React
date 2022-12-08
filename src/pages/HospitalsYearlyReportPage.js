@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import HospitalsList from '../components/hospitals/HospitalsList';
+import ReportList from '../components/hospitals/hospitalReport/ReportList';
 
-const HospitalsPage = () => {
+const HospitalsYearlyReportPage = () => {
     // defining state for the hospitals
     // initial state, func to change this state
-    const [hospitals, setHospitals] = useState([]);
+    const [reports, setHospitals] = useState([]);
 
     // loading state for loading
     const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,7 @@ const HospitalsPage = () => {
         const fetchHospitals = async () =>{
             try{
                 // send HTTP GET request 
-                const response = await fetch('http://localhost:3000/hospitals',{
+                const response = await fetch('http://localhost:3000/report',{
                    signal: fetchSignal 
                 });
                 // parse returned data 
@@ -29,7 +29,7 @@ const HospitalsPage = () => {
                     throw Error(data.error);
                 }
                 
-                setHospitals(data.hospitals);
+                setHospitals(data.yearlyReport);
                 setIsLoading(false);
 
             }catch(err){
@@ -50,9 +50,9 @@ const HospitalsPage = () => {
 
     return (
         <div className="flex flex-col items-center justify-center">
-            <HospitalsList hospitals={hospitals} />
+            <ReportList reports={reports} />
         </div>
     );
 };
 
-export default HospitalsPage;
+export default HospitalsYearlyReportPage;

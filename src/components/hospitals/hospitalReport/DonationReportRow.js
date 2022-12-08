@@ -1,10 +1,10 @@
-import BodyTdDesign from '../../UI/tablesUI/BodyTdDesign';
+import BodyTdDesign from '../../../UI/tablesUI/BodyTdDesign';
 
-const ReportRow = (props) => {
+const DonationReportRow = (props) => {
     return(
         <tr>
-            <BodyTdDesign>{props.report.femaleDonors}</BodyTdDesign>
-            <BodyTdDesign>{props.report.maleDonors}</BodyTdDesign>
+            <BodyTdDesign>{props.report.femaleDonors + "%"}</BodyTdDesign>
+            <BodyTdDesign>{props.report.maleDonors + "%"}</BodyTdDesign>
             <BodyTdDesign>{props.report.ATypeFemales}</BodyTdDesign>
             <BodyTdDesign>{props.report.BTypeFemales}</BodyTdDesign>
             <BodyTdDesign>{props.report.OTypeFemales}</BodyTdDesign>
@@ -16,4 +16,4 @@ const ReportRow = (props) => {
         </tr>
     );
 };
-export default ReportRow;
+export default DonationReportRow;
