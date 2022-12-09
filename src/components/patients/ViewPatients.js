@@ -1,24 +1,19 @@
-import TableDesign from "../../UI/tablesUI/TableDesign";
-import HeaderDesign from "../../UI/tablesUI/HeaderDesign";
-import HeaderTh from "../../UI/tablesUI/HeaderTh";
-import BodyDesign from "../../UI/tablesUI/BodyDesign";
-import BodyTdDesign from "../../UI/tablesUI/BodyTdDeisgn";
-import Card from "../../UI/cards/Card";
+import BodyTdDesign from '../../UI/tablesUI/BodyTdDesign';
+import { useNavigate } from 'react-router-dom';
 
 const ViewPatients = (props) => {
 
-    /*const navigate = useNavigate();
+    const navigate = useNavigate();
  
-    const viewBtnHandler = () => {
-        navigate(`/hospitals/report/${props.hospital._id}`);
+    const viewRequestHandler = () => {
+        navigate(`/patients/viewReuest/${props.Patient._id}`);
     };
-    const editBtnHandler = () => {
+    /*const editBtnHandler = () => {
         navigate(`/hospitals/editHospital/${props.hospital._id}`);
     };
     const deleteBtnHandler = () => {
         navigate(`/hospitals/${props.hospital._id}`);
     };*/
-
     return(
 
             <tr>
@@ -29,6 +24,7 @@ const ViewPatients = (props) => {
                 <BodyTdDesign>{props.Patient.Condition}</BodyTdDesign>
                 <BodyTdDesign>{props.Patient.BloodType}</BodyTdDesign>
                 <BodyTdDesign>{props.Patient.hospitalId}</BodyTdDesign>
+                <BodyTdDesign><button onClick={viewRequestHandler}>View Request</button></BodyTdDesign>
                 <BodyTdDesign><a>Update</a></BodyTdDesign>
                 <BodyTdDesign><a>Delete</a></BodyTdDesign>
             </tr>

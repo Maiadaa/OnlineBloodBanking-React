@@ -2,54 +2,41 @@ import TableDesign from "../../UI/tablesUI/TableDesign";
 import HeaderDesign from "../../UI/tablesUI/HeaderDesign";
 import HeaderTh from "../../UI/tablesUI/HeaderTh";
 import BodyDesign from "../../UI/tablesUI/BodyDesign";
-import ViewPatients from "./ViewPatients";
+import ViewBloodBagRequest from "./ViewBloodBagRequest";
 
-const PatientsList = (props) =>{
+const RequestsList = (props) =>{
     return(
         <div className="justify-center items-center">
             <TableDesign>
                 <HeaderDesign>
                     <HeaderTh>
-                        Name
+                        Blood Type
                     </HeaderTh>
                     <HeaderTh>
-                        Email
+                        Amount
                     </HeaderTh>
                     <HeaderTh>
-                        PhoneNumber
+                        Date
                     </HeaderTh>
                     <HeaderTh>
-                        Address
+                        Status
                     </HeaderTh>
                     <HeaderTh>
-                        Condition
+                        Purpose
                     </HeaderTh>
                     <HeaderTh>
-                        BloodType
+                        Update
                     </HeaderTh>
                     <HeaderTh>
-                        hospitalId
-                    </HeaderTh>
-                    <HeaderTh>
-                        View Requests
-                    </HeaderTh>
-                    <HeaderTh>
-                        Update Action
-                    </HeaderTh>
-                    <HeaderTh>
-                        Delete Action
+                        Accept Request
                     </HeaderTh>
                 </HeaderDesign>
                 <BodyDesign>
-                    {
-                        props.Patients.map((p) =>(
-                            <ViewPatients Patient={p} key={p._id}/>
-                        ))
-                    }
+                    <ViewBloodBagRequest Request = {props.Requests} _id = {props._id}/>
                 </BodyDesign>
             </TableDesign>
         </div>
     );
 };
 
-export default PatientsList;
+export default RequestsList;

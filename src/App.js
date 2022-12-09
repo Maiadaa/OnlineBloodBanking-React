@@ -1,10 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PatientsPage from "./pages/patientsPage";
+import PatientsPage from "./pages/PatientsPage";
 import AddPatientPage from "./pages/AddPatientPage";
 import HospitalsPage from "./pages/HospitalsPage";
 import LabAdminHomePage from "./pages/LabAdminHomePage";
 import LabManagrHomePage from "./pages/LabManagerHomePage";
 import MakeRequestPage from "./pages/MakeRequestPage";
+import ViewPatientRequests from "./pages/ViewPatientRequests";
+import ModifyRequestPage from "./pages/ModifyRequestPage";
+import AcceptPatientRequests from "./pages/AcceptRequestPage";
 
 function App() {
   return (
@@ -44,6 +47,21 @@ function App() {
         <Route path="InsertBloodBag" element={
           <div className="flex justify-center">
           <LabManagrHomePage />
+        </div>
+        }/>
+        <Route path="/patients/viewReuest/:patientId" element={
+          <div className="flex justify-center">
+          <ViewPatientRequests />
+        </div>
+        }/>
+        <Route path="/patients/ModifyRequest/:patientId/:requestId" element={
+          <div className="flex justify-center">
+          <ModifyRequestPage />
+        </div>
+        }/>
+        <Route path="/patients/AcceptRequest/:patientId/:requestId" element={
+          <div className="flex justify-center">
+          <AcceptPatientRequests />
         </div>
         }/>
       </Routes>
