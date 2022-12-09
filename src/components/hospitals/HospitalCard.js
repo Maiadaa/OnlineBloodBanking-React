@@ -15,7 +15,7 @@ const HospitalCard = (props) => {
         navigate(`/hospitals/editHospital/${props.hospital._id}`);
     };
     const deleteBtnHandler = () => {
-        navigate(`/hospitals/${props.hospital._id}`);
+        navigate(`/hospitals/deleteHospital/${props.hospital._id}`);
     };
 
     return (
