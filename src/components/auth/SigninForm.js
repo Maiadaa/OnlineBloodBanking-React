@@ -21,6 +21,7 @@ const SigninForm = () => {
         body: JSON.stringify(formData)
       });
 
+      console.log(formData);
       const data = await response.json();
 
       if (!response.ok) {

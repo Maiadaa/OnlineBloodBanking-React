@@ -1,13 +1,20 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PatientsPage from "./pages/PatientsPage";
+import PatientsPage from "./pages/patientsPage";
 import AddPatientPage from "./pages/AddPatientPage";
+import SigninPage from "./pages/SigninPage";
+import SignupPage from "./pages/SignupPage";
 import HospitalsPage from "./pages/HospitalsPage";
+import AddHospitalPage from "./pages/AddHospitalPage";
+import HospitalReportPage from './pages/HospitalReportPage';
+import HospitalsYearlyReportPage from "./pages/HospitalsYearlyReportPage";
 import LabAdminHomePage from "./pages/LabAdminHomePage";
 import LabManagrHomePage from "./pages/LabManagerHomePage";
 import MakeRequestPage from "./pages/MakeRequestPage";
 import ViewPatientRequests from "./pages/ViewPatientRequests";
 import ModifyRequestPage from "./pages/ModifyRequestPage";
 import AcceptPatientRequests from "./pages/AcceptRequestPage";
+import Layout from "./UI/layout/Layout";
+import AuthProvider from './components/store/AuthProvider';
 
 function App() {
   return (
