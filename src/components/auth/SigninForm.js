@@ -4,12 +4,22 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from '../store/authContext';
 import FormInputError from '../../UI/form/FormInputError';
 import TextInput from '../../UI/form/TextInput';
+import RoleSelectInput from '../../UI/form/RoleSelectInput';
 
 const SigninForm = () => {
   const { register, handleSubmit, formState } = useForm();
 
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const suppliersOptions = [
+    { name: "Super Admin", value: "Super Admin" },
+    {name: "Lab Manager", value: "Lab Manager" },
+    {name: "Lab Admin", value: "Lab Admin"},
+    {name: "Doctor", value: "Doctor"},
+    {name: "Donor", value: "Donor"} 
+  ];
+  
 
   const submitHandler = async (formData) => {
     try {
@@ -21,7 +31,6 @@ const SigninForm = () => {
         body: JSON.stringify(formData)
       });
 
-      console.log(formData);
       const data = await response.json();
 
       if (!response.ok) {
@@ -45,18 +54,14 @@ const SigninForm = () => {
     >
 
       <label className="text-white font-bold">Role</label>
-      <select 
+      <RoleSelectInput 
+        className='rounded-lg min-w-[250px] p-2'
         name="role"
         label="Role"
         type="text"
         register={register}
-        validation={{ required: true }}>
-        <option value="Super Admin">Super Admin</option>
-        <option value="Lab Manager">Lab Manager</option>
-        <option value="Lab Admin">Lab Admin</option>
-        <option value="Doctor">Doctor</option>
-        <option value="Donor">Donor</option>
-      </select>
+        validation={{ required: true }}
+        options={suppliersOptions}/>
       {formState.errors.role && (
         <FormInputError>Role must not be empty.</FormInputError>
       )}
