@@ -88,6 +88,31 @@ function App() {
                 <AcceptPatientRequests />
               </div>
             } />
+            <Route path="/Donations" element={
+              <div className="flex justify-center">
+                <AddDonationCampPage />
+              </div>
+            } />
+            <Route path="/Donations" element={
+              <div className="flex justify-center">
+                <AddReservationPage />
+              </div>
+            } />
+            <Route path="/Donations" element={
+              <div className="flex justify-center">
+                <DeleteReservationPage />
+              </div>
+            } />
+            <Route path="/Donations" element={
+              <div className="flex justify-center">
+                <ReservationHistoryPage />
+              </div>
+            } />
+            <Route path="/Donations" element={
+              <div className="flex justify-center">
+                <ViewDonationCamps />
+              </div>
+            } />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/signin" element={<SigninPage />} />
 

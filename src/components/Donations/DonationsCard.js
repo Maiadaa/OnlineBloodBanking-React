@@ -4,18 +4,18 @@ import CardActions from '../../UI/cards/CardActions';
 import CardBody from '../../UI/cards/CardBody';
 import CardHeader from '../../UI/cards/CardHeader';
 
-const HospitalCard = (props) => {
+const DonationCard = (props) => {
     // use the navigate function provided by the useNavigate react router hook
     const navigate = useNavigate();
  
     const viewBtnHandler = () => {
-        navigate(`/hospitals/report/${props.hospital._id}`);
+        navigate(`/donations/report/${props.donation._id}`);
     };
     const editBtnHandler = () => {
-        navigate(`/hospitals/editHospital/${props.hospital._id}`);
+        navigate(`/donations/addDonationCamp/${props.donation._id}`);
     };
     const deleteBtnHandler = () => {
-        navigate(`/hospitals/deleteHospital/${props.hospital._id}`);
+        navigate(`/donations/deleteDonationCamp/${props.donation._id}`);
     };
 
     return (
@@ -23,28 +23,28 @@ const HospitalCard = (props) => {
             <CardHeader>
             <img
             className="object-scale-down h-[200px]"
-            src={props.hospital.imageURL} //Model's attribute
-            alt={props.hospital.name}
+            src={props.donation.hospital} //Model's attribute
+            alt={props.donation.name}
             />
             </CardHeader>
             <CardBody>
                 <h1 className='font-bold'>
-                    {props.hospital.name}
+                    {props.donation.hospital}
                 </h1>
-                <h3>{props.hospital.email}</h3>
-                <h3>{props.hospital.hotline}</h3>
-                <h3>{props.hospital.Address}</h3> 
+                <h3>{props.donation.PhoneNumber}</h3>
+                <h3>{props.donation.Location}</h3>
+                <h3>{props.donation.Date}</h3> 
             </CardBody>
             <CardActions>
                 <button 
                 className="bg-white py-3 px-5 font-bold rounded-xl float-left"
                 onClick ={editBtnHandler}> 
-                    Edit Hospital
+                    Edit donationCamp
                 </button>
                 <button 
                 className="bg-white py-3 px-5 font-bold rounded-xl"
                 onClick={deleteBtnHandler}> 
-                    Delete Hospital
+                    Delete donationCamp
                 </button>
             </CardActions>
             <CardActions>
@@ -58,4 +58,4 @@ const HospitalCard = (props) => {
         </Card>
     );
 };
-export default HospitalCard;
+export default DonationCard;
