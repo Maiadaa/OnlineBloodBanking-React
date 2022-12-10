@@ -2,6 +2,7 @@ import Card from '../../UI/BloodBagsUI/MenuCard/Card';
 import CardHeader from '../../UI/BloodBagsUI/MenuCard/CardHeader';
 import CardBody from '../../UI/BloodBagsUI/MenuCard/CardBody';
 import CardActions from '../../UI/BloodBagsUI/MenuCard/CardActions';
+import { NavLink } from 'react-router-dom';
 
 const MenuOption = (props) =>
 {
@@ -10,7 +11,7 @@ const MenuOption = (props) =>
         <Card> 
             <CardHeader>
                 <img className="rounded-t-lg"
-                    src={props.option.ImgURL}
+                    src={props.option.imgURL}
                     alt={props.option.optionName}
                     />
             </CardHeader>
@@ -19,10 +20,13 @@ const MenuOption = (props) =>
                 <p className="text-gray-700 text-base mb-4">{props.option.optionDesc}</p>
             </CardBody>
             <CardActions>
+                <NavLink to={props.option.pageLink}>
                 <button type = "button" className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight
                  uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700
                 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Visit Page</button>
+                </NavLink>
             </CardActions>
+            <br></br>
         </Card>
     );
 };
