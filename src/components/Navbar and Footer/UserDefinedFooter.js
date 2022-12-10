@@ -24,7 +24,7 @@ return(
     </div>
   
     <div className="text-center text-gray-700 p-4">
-      © 2021 Copyright:   
+      © 2022 Copyright:   
       <a className="text-gray-800" href="https://tailwind-elements.com/">  BloodERA</a>
     </div>
   </footer>

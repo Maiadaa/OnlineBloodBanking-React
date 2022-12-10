@@ -7,14 +7,15 @@ import FormInputError from '../../UI/form/FormInputError';
 const InsertBloodBag = (props) =>
 {
   const { register, handleSubmit, formState } = useForm();
-  const inventoryOptions = props.inventories.map((i) => {
-    return {name: i.name, id: i._id};
-});
-const hostpitalID = "638dfc9591c066990c434584";
+
+
+const hostpitalID = "638e7c0f8dce3f12d68269dd";
   const submitHandler = async (formData) => {
       try {
-        formData.Request = [];
-        const response = await fetch('http://localhost:3000/BloodBag', {
+        console.log(JSON.stringify(formData));
+        formData.hospital = hostpitalID;
+        formData.pending = 'true';
+        const response = await fetch('http://localhost:3000/BloodBag/InsertBloodBag' , {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -35,10 +36,10 @@ const hostpitalID = "638dfc9591c066990c434584";
   };
     return(
         <form method="POST" className="flex flex-col p-10 gap-5 w-full bg-white shadow-2xl rounded-lg" onSubmit={handleSubmit(submitHandler)}>
-        <label className=" text-center text-2xl font-bold" >Insert new Blood Bag requestt</label>
-        <TextInput 
+        <label className=" text-center text-2xl font-bold" >Insert new Blood Bag Request</label>
+        <TextInput  
           type = "text"
-          name = "bloodtype"
+          name = "bloodType"
           placeholder = "Enter Blood Type"
           register={register}
           validation={{ required: true }}
@@ -108,7 +109,7 @@ const hostpitalID = "638dfc9591c066990c434584";
         )}
         <TextInput 
           type = "text"
-          name = "TrypanosomaCruzi"
+          name = "TrypanosmaCruzy"
           placeholder = "Enter the TrypanosomaCruzi"
           register={register}
           validation={{ required: true }}
@@ -146,6 +147,7 @@ const hostpitalID = "638dfc9591c066990c434584";
         {formState.errors.BloodType && (
           <FormInputError>BacterialContamination must not be empty</FormInputError>
         )}
+        
     <button
       type="submit"
       className="text-white dark:bg-black cursor-pointer font-medium rounded-lg text-sm px-5 py-2.5 text-center w-1/2 place-self-center hover:bg-gray-400 hover:text-black"

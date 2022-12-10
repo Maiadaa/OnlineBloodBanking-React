@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MenuList from "../components/BloodInventory/MenuList";
-const LabAdminHomePage = () => 
+const LabManagerHomePage = () => 
 {
     const [options, setOptions] = useState([]);
 
@@ -41,4 +41,4 @@ const LabAdminHomePage = () =>
     );
 };
 
-export default LabAdminHomePage;
+export default LabManagerHomePage;

@@ -29,12 +29,12 @@ const LabAdminHomePage = () =>
     };
     return (
     <div className="inline flex-col items-center justify-center    ">
-        <UserDefinedNavbar></UserDefinedNavbar>
+        
         <button id = "button" className="bg-slate-800 text-white py-3 px-10 my-10 font-bold rounded-xl " onClick={onButtonClickHandler}>
         Get Started!
         </button>
         <MenuList options = {options}></MenuList>
-        <UserDefinedFooter></UserDefinedFooter>
+            
     </div>
     );
 };
