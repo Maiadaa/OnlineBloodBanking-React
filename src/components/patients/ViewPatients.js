@@ -26,7 +26,6 @@ const ViewPatients = (props) => {
                 <BodyTdDesign>{props.Patient.hospitalId}</BodyTdDesign>
                 <BodyTdDesign><button onClick={viewRequestHandler}>View Request</button></BodyTdDesign>
                 <BodyTdDesign><a>Update</a></BodyTdDesign>
-                <BodyTdDesign><a>Delete</a></BodyTdDesign>
             </tr>
     );
 };

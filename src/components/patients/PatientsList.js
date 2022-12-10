@@ -34,10 +34,7 @@ const PatientsList = (props) =>{
                         View Requests
                     </HeaderTh>
                     <HeaderTh>
-                        Update Action
-                    </HeaderTh>
-                    <HeaderTh>
-                        Delete Action
+                        Update Actions
                     </HeaderTh>
                 </HeaderDesign>
                 <BodyDesign>

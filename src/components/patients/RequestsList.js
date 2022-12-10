@@ -28,7 +28,7 @@ const RequestsList = (props) =>{
                         Update
                     </HeaderTh>
                     <HeaderTh>
-                        Accept Request
+                        Accept Requests
                     </HeaderTh>
                 </HeaderDesign>
                 <BodyDesign>
