@@ -38,10 +38,12 @@ const SigninForm = () => {
       }
 
       // invoke the login function in our auth context
-      authContext.login(data.userId, data.username, data.jwt, data.role);
+      authContext.login(data.userId, data.username, data.jwt, data.role, data.hospitalId);
 
-      // navigate to the home page
-      navigate('/');
+      if(data.role == "Lab Manager"){
+        // navigate to the home page
+        navigate('/');
+      }
     } catch (err) {
       console.log(err.message);
     }
