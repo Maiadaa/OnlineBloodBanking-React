@@ -19,6 +19,7 @@ import UpdateSuperAdminPage from "./pages/UpdateSuperAdminPage";
 import UpdateLabManagerPage from "./pages/UpdateLabManagerPage";
 import UpdateLabAdminPage from "./pages/UpdateLabAdminPage";
 
+
 function App() {
   return (
     <AuthProvider>
@@ -91,7 +92,7 @@ function App() {
                 <AcceptPatientRequests />
               </div>
             } />
-            <Route path="/Donations" element={
+            {/*<Route path="/Donations" element={
               <div className="flex justify-center">
                 <AddDonationCampPage />
               </div>
@@ -115,7 +116,7 @@ function App() {
               <div className="flex justify-center">
                 <ViewDonationCamps />              
                 </div>
-            } />
+            } />*/}
             <Route path="/superAdmin/Update" element={
               <div className="flex justify-center">
                 <UpdateSuperAdminPage />
