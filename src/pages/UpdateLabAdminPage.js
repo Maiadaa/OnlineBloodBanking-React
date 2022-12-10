@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import UpdateLabAdminAccount from "../components/userAccounts/UpdateLabAdminAccount";
-import UpdateLabManagerAccount from "../components/userAccounts/UpdateLabManagerAccount";
 
 const UpdateLabAdminPage = () => {
     const [Hospitals, setHospitals] = useState([]);

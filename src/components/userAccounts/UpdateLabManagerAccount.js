@@ -14,7 +14,7 @@ const UpdateLabManagerAccount = (props) => {
     const LabManagerId = props.labManagerId;
     const submitHandler = async (formData) => {
         try {   
-          const response = await fetch('http://localhost:3000/userAccount/userAccount/UpdateSuperAdmin/' + LabManagerId, {
+          const response = await fetch('http://localhost:3000/userAccount/auth/UpdateSuperAdmin/' + LabManagerId, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
