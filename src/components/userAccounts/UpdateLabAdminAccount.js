@@ -3,15 +3,17 @@ import TextInput from '../../UI/form/ModifyForm/TextInput';
 import FormInputError from '../../UI/form//ModifyForm/FormInputError';
 import SelectInput from '../../UI/form/SelectInput';
 import { useNavigate } from 'react-router-dom';
-
+import AuthContext from '../store/authContext';
 
 const UpdateLabAdminAccount = (props) => {
+
+    AuthContext.id;
     const { register, handleSubmit, formState } = useForm();
     const navigate = useNavigate();
     const hospitalsOptions = props.hospitals.map((h) => {
         return {name: h.name, id: h._id};
     });
-    const LabManagerId = props.labAdminId;
+    const LabManagerId = AuthContext.id;;
     const submitHandler = async (formData) => {
         try {   
           const response = await fetch('http://localhost:3000/auth/auth/UpdateSuperAdmin/' + LabManagerId, {
