@@ -30,7 +30,7 @@ const Navbar = () => {
         <NavItem to="/">About</NavItem>
         {!authContext.token && <NavItem to="/signin">Sign In</NavItem>}
         {!authContext.token && <NavItem to="/signup">Sign Up</NavItem>}
-        {authContext.token && <NavItem to={homeURL}>Account</NavItem>}
+        {authContext.token && <NavItem to={accountURL}>Account</NavItem>}
         {authContext.token && <NavItem to="/logout">Log out</NavItem>}
       </ul>
     </nav>
