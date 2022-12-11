@@ -6,13 +6,13 @@ const Navbar = () => {
   var homeURL;
   const authContext = useContext(AuthContext);
   if(authContext.role == "Lab Manager"){
-    homeURL = "/LabManagerHomePage";
+    homeURL = "/LabManagerMenu";
   }else if(authContext.role == "Lab Admin"){
-    //homeURL = "/LabAdminHomePage";
+    homeURL = "/LabAdminMenu";
   }else if(authContext.role == "Super Admin"){
-    //homeURL = "/SuperAdminHomePage";
+    homeURL = "/SuperAdminHomePage";
   }else if (authContext.role == "Doctor"){
-        //homeURL = "/DoctorHomePage";
+    //homeURL = "/DoctorHomePage";
   }else if (authContext.role == "Donor"){
     //homeURL = "/DonorHomePage";
   }

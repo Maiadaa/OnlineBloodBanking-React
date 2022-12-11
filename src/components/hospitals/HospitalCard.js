@@ -14,8 +14,26 @@ const HospitalCard = (props) => {
     const editBtnHandler = () => {
         navigate(`/hospitals/${props.hospital._id}`);
     };
-    const deleteBtnHandler = () => {
-        navigate(`/hospitals/deleteHospital/${props.hospital._id}`);
+    const deleteBtnHandler = async () => {
+        try{
+            const response = await fetch(`http://localhost:3000/hospitals/${props.hospital._id}`,{
+                method:'DELETE',
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const data = await response.json();
+
+            if(!response.ok){
+                throw Error(data.error);
+            }
+
+            console.log("done");
+
+        }catch(err){
+            alert("Failed to add Hospital");
+        }
     };
 
     return (
@@ -46,6 +64,13 @@ const HospitalCard = (props) => {
                 onClick={deleteBtnHandler}> 
                     Delete Hospital
                 </button>
+                <div>
+                {open ? 
+                    <Popup 
+                    text="Hospital deleted Successfully" 
+                    closePopup={() => setOpen(false)} /> 
+                : null}
+            </div>
             </CardActions>
             <CardActions>
                 <button 
@@ -54,6 +79,7 @@ const HospitalCard = (props) => {
                 > 
                 View Report
                 </button>
+                
             </CardActions>
         </Card>
     );

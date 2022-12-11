@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import InsertBloodBag from "../components/BloodInventory/InsertBloodBag"
+
 const InsertBloodBagPage = () =>{
     const [isLoading, setIsLoading] = useState(true);
     const [hospitals, setHospitals] = useState();
@@ -40,4 +41,4 @@ const InsertBloodBagPage = () =>{
         </div>
       );
 };
-export default InsertBloodBag;
+export default InsertBloodBagPage;

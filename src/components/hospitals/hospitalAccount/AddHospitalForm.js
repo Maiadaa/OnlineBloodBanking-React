@@ -27,7 +27,6 @@ const AddHospitalForm = () =>{
                 throw Error(data.error);
             }
 
-            // showPopUp();
             setOpen(true);
             console.log("done");
 

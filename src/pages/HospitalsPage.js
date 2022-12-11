@@ -42,7 +42,7 @@ const HospitalsPage = () => {
         return () => {
             fetchAbortController.abort();
         };
-    }, []);
+    }, [hospitals]);
 
     if (isLoading) {
         return <p>Please wait while we are loading data...</p>;
