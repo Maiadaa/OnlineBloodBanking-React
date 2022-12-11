@@ -19,7 +19,7 @@ const DonorHomePage = () =>
             imgURL: 'https://cdn-icons-png.flaticon.com/512/1476/1476897.png',
             optionName: 'Add Donor reservation',
             optionDesc: 'Viewing all donor reservations,',
-            pageLink: '/Donations/Add-Reservation'
+            pageLink: '/addDonorReservation'
         }
     ];
 

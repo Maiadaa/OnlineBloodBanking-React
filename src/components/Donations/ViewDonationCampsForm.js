@@ -1,4 +1,7 @@
-import BodyTdDesign from '../../UI/tablesUI/BodyTdDesign';
+import TableDesign from '../../../UI/tablesUI/TableDesign';
+import HeaderDesign from '../../../UI/tablesUI/HeaderDesign';
+import HeaderTh from '../../../UI/tablesUI/HeaderTh';
+import BodyDesign from '../../../UI/tablesUI/BodyDesign';
 import { useNavigate } from 'react-router-dom';
 
 const ViewDonationCamps = (props) => {
@@ -8,15 +11,20 @@ const ViewDonationCamps = (props) => {
     const viewRequestHandler = () => {
         navigate(`/Donations/ViewDonationCampForm`);
     };
-    return(
 
-            <tr>
-                <BodyTdDesign>{props.donation.hospital}</BodyTdDesign>
-                <BodyTdDesign>{props.donation.PhoneNumebr}</BodyTdDesign>
-                <BodyTdDesign>{props.donation.Location}</BodyTdDesign>
-                <BodyTdDesign>{props.donation.Date}</BodyTdDesign>
-                <BodyTdDesign><button onClick={viewRequestHandler}>View Camps</button></BodyTdDesign>
-            </tr>
+    return(
+        <TableDesign>
+            <HeaderDesign>
+                <HeaderTh>Hospital Name</HeaderTh>
+                <HeaderTh>Camp phone number</HeaderTh>
+                <HeaderTh>Camp Location</HeaderTh>
+                <HeaderTh>Camp date</HeaderTh>
+            </HeaderDesign>
+            <BodyDesign>{
+                // neb3at details all camps by map func
+                //<BodyTdDesign>
+            }</BodyDesign> 
+        </TableDesign>
     );
 };
 

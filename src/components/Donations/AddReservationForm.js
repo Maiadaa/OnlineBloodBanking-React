@@ -1,8 +1,7 @@
 import {useForm} from 'react-hook-form';
 import { useState } from 'react';
-import FormInputError from '../../../UI/form/FormInputError';
-import Textinput from '../../../UI/form/TextInput';
-import Popup from './PopUp';
+import FormInputError from '../../UI/form/FormInputError';
+import TextInput from '../../UI/form/TextInput';
 
 const AddReservationForm = () =>{
     // register input values with name identifiers 
@@ -44,7 +43,7 @@ const AddReservationForm = () =>{
                 onSubmit={handleSubmit(submitHandler)}
                 >
                     <label className="text-white font-bold">Donor ID</label>
-                    <Textinput
+                    <TextInput
                     label="Name"
                     type="text"
                     name="DonorID"

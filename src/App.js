@@ -32,6 +32,8 @@ import LabManagerHomePage from "./pages/LabManagerHomePage";
 
 /* Mohamed Taie */
 import DonorHomePage from "./pages/DonorHomePage";
+import ViewDonationCampsPage from "./pages/ViewDonationCampsPage";
+import AddReservationPage from "./pages/AddReservationPage";
 
 function App() {
   return (
@@ -153,7 +155,16 @@ function App() {
                 <DonorHomePage />
               </div>
             } />
-
+            <Route path="/Donations" element={
+              <div className="flex justify-center">
+                <ViewDonationCampsPage />
+              </div>
+            } />
+            <Route path="/addDonorReservation" element={
+              <div className="flex justify-center">
+                <AddReservationPage />
+              </div>
+            } />
           </Routes>
         </Layout>
       </BrowserRouter>
