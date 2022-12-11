@@ -34,6 +34,7 @@ import LabManagerHomePage from "./pages/LabManagerHomePage";
 import DonorHomePage from "./pages/DonorHomePage";
 import ViewDonationCampsPage from "./pages/ViewDonationCampsPage";
 import AddReservationPage from "./pages/AddReservationPage";
+import AddDonationCampPage from "./pages/AddDonationCampPage";
 
 function App() {
   return (
@@ -163,6 +164,11 @@ function App() {
             <Route path="/addDonorReservation" element={
               <div className="flex justify-center">
                 <AddReservationPage />
+              </div>
+            } />
+            <Route path="/addDonationCamp" element={
+              <div className="flex justify-center">
+                <AddDonationCampPage />
               </div>
             } />
           </Routes>

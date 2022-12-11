@@ -41,6 +41,13 @@ const DoctorHomePage = () =>
             imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
             optionName: 'Request Blood Bag',
             optionDesc: 'View blood bag requests made by doctors within you hospital'
+        },
+        {
+            optionID : 6,
+            imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
+            optionName: 'Add Donation Camp',
+            optionDesc: 'Add a new donation camp offered by the hospital to donor of our system',
+            pageLink: '/addDonationCamp'
         }
     ]
 

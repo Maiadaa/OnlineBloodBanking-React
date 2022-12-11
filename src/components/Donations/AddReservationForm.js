@@ -55,7 +55,7 @@ const AddReservationForm = () =>{
                     )}
 
                     <label className="text-white font-bold">Reservation time slot</label>
-                    <Textinput
+                    <TextInput
                     label="Location"
                     type="text"
                     name="timeSlot"
@@ -66,17 +66,6 @@ const AddReservationForm = () =>{
                         <FormInputError>Time slot must not be empty </FormInputError>
                     )}
 
-                    <label className="text-white font-bold">Blood bags quantity</label>
-                    <Textinput
-                    label="bags"
-                    type="number"
-                    name="bloodBagsQty"
-                    register={register}
-                    validation={{required:true}}
-                    />
-                    {formState.errors.Address && (
-                        <FormInputError>quantity must not be empty </FormInputError>
-                    )}
 
                     <button type = "submit" className="bg-white rounded-xl my-4 py-2 px-8 self-center">
                         Add Donor Reservation
