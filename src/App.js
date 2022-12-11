@@ -42,6 +42,11 @@ function App() {
                 <HospitalReportPage />
               </div>
             } />
+            <Route path="/hospitals/:hospitalId" element={
+              <div className="flex justify-center">
+                <HospitalReportPage />
+              </div>
+            } />
             <Route path="/hospitals/addHospital" element={
               <div className="flex justify-center">
                 <AddHospitalPage />
