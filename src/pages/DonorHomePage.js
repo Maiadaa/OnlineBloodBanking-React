@@ -18,8 +18,15 @@ const DonorHomePage = () =>
             optionID : 2,
             imgURL: 'https://cdn-icons-png.flaticon.com/512/1476/1476897.png',
             optionName: 'Add Donor reservation',
-            optionDesc: 'Viewing all donor reservations,',
+ optionDesc: 'Adding all donor reservations,',
             pageLink: '/addDonorReservation'
+        },
+        {
+            optionID : 3,
+            imgURL: 'https://cdn.fedweb.org/cache/fed-96/2/BGFJCC%2520Reservations_580559_resize_1016__1_1.jpg',
+            optionName: 'View Donor reservation',
+            optionDesc: 'Viewing all donor reservations,',
+            pageLink: '/ViewDonorReservation'
         }
     ];
 

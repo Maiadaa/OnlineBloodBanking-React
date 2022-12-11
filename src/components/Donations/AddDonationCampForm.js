@@ -1,8 +1,7 @@
 import {useForm} from 'react-hook-form';
 import { useState } from 'react';
-import FormInputError from '../../../UI/form/FormInputError';
-import Textinput from '../../../UI/form/TextInput';
-import Popup from './PopUp';
+import FormInputError from '../../UI/form/FormInputError';
+import Textinput from '../../UI/form/TextInput';
 
 const AddDonationCampForm = () =>{
     // register input values with name identifiers 

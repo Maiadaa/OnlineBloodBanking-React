@@ -1,8 +1,9 @@
-import TableDesign from '../../../UI/tablesUI/TableDesign';
-import HeaderDesign from '../../../UI/tablesUI/HeaderDesign';
-import HeaderTh from '../../../UI/tablesUI/HeaderTh';
-import BodyDesign from '../../../UI/tablesUI/BodyDesign';
+import TableDesign from '../../UI/tablesUI/TableDesign';
+import HeaderDesign from '../../UI/tablesUI/HeaderDesign';
+import HeaderTh from '../../UI/tablesUI/HeaderTh';
+import BodyDesign from '../../UI/tablesUI/BodyDesign';
 import { useNavigate } from 'react-router-dom';
+import DonationsList from './DonationsList';
 
 const ViewDonationCamps = (props) => {
 
@@ -21,8 +22,11 @@ const ViewDonationCamps = (props) => {
                 <HeaderTh>Camp date</HeaderTh>
             </HeaderDesign>
             <BodyDesign>{
-                // neb3at details all camps by map func
-                //<BodyTdDesign>
+  <div className="justify-center items-center">
+                {props.reports.map((c) => ( 
+                    <DonationsList camp={c.camp} key={c.camp._id} />
+                ))}
+            </div>
             }</BodyDesign> 
         </TableDesign>
     );
