@@ -1,6 +1,6 @@
 import DonationCard from "./DonationsCard";
 
-const DonationList = (props) =>{
+const DonationsList = (props) =>{
     return (
         <div className="justify-center items-center">
             {props.hospitals.map((h) => ( 
@@ -10,4 +10,4 @@ const DonationList = (props) =>{
     );
 };
 
-export default DonationList;
+export default DonationsList;

@@ -4,20 +4,38 @@ import CardActions from '../../UI/cards/CardActions';
 import CardBody from '../../UI/cards/CardBody';
 import CardHeader from '../../UI/cards/CardHeader';
 
-const DonationCard = (props) => {
+const DonationsCard = (props) => {
     // use the navigate function provided by the useNavigate react router hook
     const navigate = useNavigate();
  
     const viewBtnHandler = () => {
-        navigate(`/donations/report/${props.donation._id}`);
+        navigate(`/donations/DonationCamps/${props.donation._id}`);
     };
     const editBtnHandler = () => {
         navigate(`/donations/addDonationCamp/${props.donation._id}`);
     };
-    const deleteBtnHandler = () => {
-        navigate(`/donations/deleteDonationCamp/${props.donation._id}`);
-    };
 
+    const deleteBtnHandler = async () => {
+        try{
+            const response = await fetch(`http://localhost:3000/donations/Retrieve-donation-camps/${props.donationCamp._id}`,{
+                method:'DELETE',
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const data = await response.json();
+
+            if(!response.ok){
+                throw Error(data.error);
+            }
+
+            console.log("done");
+
+        }catch(err){
+            alert("Failed to delete Hospital");
+        }
+    };
     return (
         <Card>
             <CardHeader>
@@ -52,10 +70,10 @@ const DonationCard = (props) => {
                 className="bg-white py-3 px-20 font-bold rounded-xl mb-8"
                 onClick={viewBtnHandler}    
                 > 
-                View Report
+                View Donation camp
                 </button>
             </CardActions>
         </Card>
     );
 };
-export default DonationCard;
+export default DonationsCard;
