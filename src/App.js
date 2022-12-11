@@ -18,6 +18,11 @@ import AuthProvider from './components/store/AuthProvider';
 import UpdateSuperAdminPage from "./pages/UpdateSuperAdminPage";
 import UpdateLabManagerPage from "./pages/UpdateLabManagerPage";
 import UpdateLabAdminPage from "./pages/UpdateLabAdminPage";
+import AddDonationCampPage from "./page/AddDonationCampPage";
+import AddReservationPage from "./page/AddReservationPage";
+import DonationCampsPage from "./pages/DonationCampsPage";
+import DonationsPage from "./pages/DonationsPage";
+import ReservationHistoryPage from "./pages/ReservationHistoryPage";
 
 
 function App() {
@@ -97,7 +102,14 @@ function App() {
                 <AcceptPatientRequests />
               </div>
             } />
-            {/*<Route path="/Donations" element={
+
+            <Route path="/Donations" element={
+              <div className="flex justify-center">
+                <DonationsPage />
+              </div>
+            } />
+
+           <Route path="/Donations" element={
               <div className="flex justify-center">
                 <AddDonationCampPage />
               </div>
@@ -119,9 +131,10 @@ function App() {
             } />
             <Route path="/Donations" element={
               <div className="flex justify-center">
-                <ViewDonationCamps />              
+                <DonationCampsPage />              
                 </div>
-            } />*/}
+            } />
+
             <Route path="/superAdmin/Update" element={
               <div className="flex justify-center">
                 <UpdateSuperAdminPage />
