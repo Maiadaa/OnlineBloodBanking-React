@@ -6,7 +6,7 @@ const SelectInput = (props) => {
         className="rounded-lg min-w-[250px] px-4 active:bg-gray-400 focus:outline-none focus:ring focus:ring-gray-400 hover:bg-gray-200 h-10"
         {...props.register(props.name, props.validation)}
       >
-        <option selected>None</option>
+        <option selected value = "none">None</option>
         {props.options.map((o) => (
           <option value={o.id} key={o.id}>
             {o.name}

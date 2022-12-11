@@ -15,6 +15,10 @@ import ModifyRequestPage from "./pages/ModifyRequestPage";
 import AcceptPatientRequests from "./pages/AcceptRequestPage";
 import Layout from "./UI/layout/Layout";
 import AuthProvider from './components/store/AuthProvider';
+import UpdateSuperAdminPage from "./pages/UpdateSuperAdminPage";
+import UpdateLabManagerPage from "./pages/UpdateLabManagerPage";
+import UpdateLabAdminPage from "./pages/UpdateLabAdminPage";
+
 
 function App() {
   return (
@@ -88,7 +92,7 @@ function App() {
                 <AcceptPatientRequests />
               </div>
             } />
-            <Route path="/Donations" element={
+            {/*<Route path="/Donations" element={
               <div className="flex justify-center">
                 <AddDonationCampPage />
               </div>
@@ -110,7 +114,22 @@ function App() {
             } />
             <Route path="/Donations" element={
               <div className="flex justify-center">
-                <ViewDonationCamps />
+                <ViewDonationCamps />              
+                </div>
+            } />*/}
+            <Route path="/superAdmin/Update" element={
+              <div className="flex justify-center">
+                <UpdateSuperAdminPage />
+              </div>
+            } />
+            <Route path="/LabManager/Update" element={
+              <div className="flex justify-center">
+                <UpdateLabManagerPage />
+              </div>
+            } />
+            <Route path="/LabAdmin/Update" element={
+              <div className="flex justify-center">
+                <UpdateLabAdminPage />
               </div>
             } />
             <Route path="/signup" element={<SignupPage />} />
