@@ -1,14 +1,21 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PatientsPage from "./pages/patientsPage";
-import AddPatientPage from "./pages/AddPatientPage";
+
+/* Maiada */
 import SigninPage from "./pages/SigninPage";
 import SignupPage from "./pages/SignupPage";
+import LogoutPage from "./pages/LogoutPage";
 import HospitalsPage from "./pages/HospitalsPage";
 import AddHospitalPage from "./pages/AddHospitalPage";
+import EditHospitalPage from './pages/EditHospitalPage';
 import HospitalReportPage from './pages/HospitalReportPage';
 import HospitalsYearlyReportPage from "./pages/HospitalsYearlyReportPage";
-import LabAdminHomePage from "./pages/LabAdminHomePage";
-import LabManagrHomePage from "./pages/LabManagerHomePage";
+import SuperAdminHomePage from "./pages/SuperAdminHomePage";
+
+/* Abdelrahman Hagrass */
+import PatientsPage from "./pages/patientsPage";
+import AddPatientPage from "./pages/AddPatientPage";
+
+
 import MakeRequestPage from "./pages/MakeRequestPage";
 import ViewPatientRequests from "./pages/ViewPatientRequests";
 import ModifyRequestPage from "./pages/ModifyRequestPage";
@@ -18,14 +25,12 @@ import AuthProvider from './components/store/AuthProvider';
 import UpdateSuperAdminPage from "./pages/UpdateSuperAdminPage";
 import UpdateLabManagerPage from "./pages/UpdateLabManagerPage";
 import UpdateLabAdminPage from "./pages/UpdateLabAdminPage";
-//import AddDonationCampPage from "./page/AddDonationCampPage";
-//import AddReservationPage from "./page/AddReservationPage";
-//import DonationCampsPage from "./pages/DonationCampsPage";
-//import DonationsPage from "./pages/DonationsPage";
-//import ReservationHistoryPage from "./pages/ReservationHistoryPage";
-import DoctorHomePage from "./pages/DoctorHomePage";
-import ManagePatientPage from "./pages/ManagePatientsPage";
 
+/* Mahmoud Assem */
+import InsertBloodBagPage from "./pages/InsertBloodBag";
+import ViewInventoryPage from "./pages/ViewInventory";
+import LabAdminHomePage from "./pages/LabAdminHomePage";
+import LabManagerHomePage from "./pages/LabManagerHomePage";
 
 function App() {
   return (
@@ -34,6 +39,17 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<h1>Home Page</h1>} />
+            
+
+            {/* Maiada */}
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/signin" element={<SigninPage />} />
+            <Route path="/logout" element={<LogoutPage />} />
+            <Route path="/SuperAdminHomePage" element={
+              <div className="flex justify-center">
+                <SuperAdminHomePage />
+              </div>
+            } />
             <Route path="/hospitals" element={
               <div className="flex justify-center">
                 <HospitalsPage />
@@ -49,16 +65,18 @@ function App() {
                 <HospitalReportPage />
               </div>
             } />
-            <Route path="/hospitals/:hospitalId" element={
-              <div className="flex justify-center">
-                <HospitalReportPage />
-              </div>
-            } />
             <Route path="/hospitals/addHospital" element={
               <div className="flex justify-center">
                 <AddHospitalPage />
               </div>
             } />
+            <Route path="/hospitals/editHospital/:hospitalID" element={
+              <div className="flex justify-center">
+                <EditHospitalPage />
+              </div>
+            } />
+
+            {/* Abdelrahman Hagrass */}
             <Route path="/getAllPatients" element={
               <div className="flex justify-center">
                 <PatientsPage />
@@ -72,21 +90,6 @@ function App() {
             <Route path="/patients/makeRequest" element={
               <div className="flex justify-center">
                 <MakeRequestPage />
-              </div>
-            } />
-            <Route path="LabAdminMenu" element={
-              <div className="flex justify-center">
-                <LabAdminHomePage />
-              </div>
-            } />
-            <Route path="LabManagerMenu" element={
-              <div className="flex justify-center">
-                <LabManagrHomePage />
-              </div>
-            } />
-            <Route path="InsertBloodBag" element={
-              <div className="flex justify-center">
-                <LabManagrHomePage />
               </div>
             } />
             <Route path="/patients/viewReuest/:patientId" element={
@@ -104,39 +107,6 @@ function App() {
                 <AcceptPatientRequests />
               </div>
             } />
-
-{/*             <Route path="/Donations" element={
-              <div className="flex justify-center">
-                <DonationsPage />
-              </div>
-            } />
-
-           <Route path="/Donations" element={
-              <div className="flex justify-center">
-                <AddDonationCampPage />
-              </div>
-            } />
-            <Route path="/Donations" element={
-              <div className="flex justify-center">
-                <AddReservationPage />
-              </div>
-            } />
-            <Route path="/Donations" element={
-              <div className="flex justify-center">
-                <DeleteReservationPage />
-              </div>
-            } />
-            <Route path="/Donations" element={
-              <div className="flex justify-center">
-                <ReservationHistoryPage />
-              </div>
-            } />
-            <Route path="/Donations" element={
-              <div className="flex justify-center">
-                <DonationCampsPage />              
-                </div>
-            } /> */}
-
             <Route path="/superAdmin/Update" element={
               <div className="flex justify-center">
                 <UpdateSuperAdminPage />
@@ -152,18 +122,37 @@ function App() {
                 <UpdateLabAdminPage />
               </div>
             } />
-            <Route path="/patient/Update/:patientId" element={
+
+            {/* Mahmoud Assem */}
+            <Route path="/LabAdminMenu" element={
               <div className="flex justify-center">
-                <ManagePatientPage />
+                <LabAdminHomePage />
               </div>
             } />
-            <Route path="/signup" element={<SignupPage />} />
-            <Route path="/signin" element={<SigninPage />} />
-            <Route path="/DoctorHomePage" element={
+            <Route path="/LabManagerMenu" element={
               <div className="flex justify-center">
-                <DoctorHomePage />
+                <LabManagerHomePage />
               </div>
             } />
+            <Route path="/InsertBloodBag" element={
+              <div className="flex justify-center">
+                <InsertBloodBagPage /> 
+              </div>
+            } />
+            <Route path="/" element={
+              <div className="flex justify-center">
+                <ViewInventoryPage />
+              </div>
+            } />
+            {/* ViewPendingRequests */}
+            
+            {/* Mohamed Taie */}
+            <Route path="/DonorHomePage" element={
+              <div className="flex justify-center">
+                <DonorHomePage />
+              </div>
+            } />
+
           </Routes>
         </Layout>
       </BrowserRouter>
