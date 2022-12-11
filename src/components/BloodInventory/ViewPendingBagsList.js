@@ -2,17 +2,18 @@ import TableDesign from "../../UI/tablesUI/TableDesign";
 import HeaderDesign from "../../UI/tablesUI/HeaderDesign";
 import HeaderTh from "../../UI/tablesUI/HeaderTh";
 import BodyDesign from "../../UI/tablesUI/BodyDesign";
-import ViewBags from "./ViewBags";
-const ViewInventoryList = (props) => {
+import ViewPendingBags from "../BloodInventory/ViewPendingBags";
+const ViewPendingBagsList = (props) => {
+    console.log(props.BloodBags);
     return(
     <div className="justify-center items-center">
             <TableDesign>
                 <HeaderDesign>
                     <HeaderTh>
-                        BloodBag ID
+                    BloodBag ID
                     </HeaderTh>
                     <HeaderTh>
-                        Blood Type
+                    Blood Type
                     </HeaderTh>
                     <HeaderTh>
                     HBV
@@ -27,13 +28,13 @@ const ViewInventoryList = (props) => {
                     HTLV
                     </HeaderTh>
                     <HeaderTh>
-                    syphilis  
+                    syphilis
                     </HeaderTh>
                     <HeaderTh>
-                    WNV 
+                    WNV
                     </HeaderTh>
                     <HeaderTh>
-                    TrypanosomaCruzi
+                    T-Cruzi
                     </HeaderTh>
                     <HeaderTh>
                     CMV
@@ -44,13 +45,15 @@ const ViewInventoryList = (props) => {
                     <HeaderTh>
                     BacterialContamination
                     </HeaderTh>
-                    
+                    <HeaderTh>
+                    Action
+                    </HeaderTh>
                 </HeaderDesign>
                 <BodyDesign>
                     {
                         props.BloodBags.map((b) =>(
                             console.log(b),
-                            <ViewBags BloodBag={b} key={b._id}/>
+                            <ViewPendingBags BloodBag={b} key={b._id}/>
                         ))
                     }
                 </BodyDesign>
@@ -58,4 +61,4 @@ const ViewInventoryList = (props) => {
         </div>
     );
 };
-export default ViewInventoryList;
+export default ViewPendingBagsList;

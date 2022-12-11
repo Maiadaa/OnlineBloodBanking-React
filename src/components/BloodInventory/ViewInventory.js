@@ -1,13 +1,9 @@
 import BodyTdDesign from '../../UI/tablesUI/BodyTdDesign';
 import { useNavigate } from 'react-router-dom';
 
-const ViewInventory = (props) => {
-
-    const navigate = useNavigate();
-    const viewRequestHandler = () => {
-        navigate(`/BloodBag/ViewAcceptedBloodBagsInHospital/' ${props.BloodBag.hostpial}`);
-    };
+const View = (props) => {
     return (
+        
         <tr>
         <BodyTdDesign>{props.BloodBag._id}</BodyTdDesign>
         <BodyTdDesign>{props.BloodBag.bloodType}</BodyTdDesign>
@@ -20,8 +16,7 @@ const ViewInventory = (props) => {
         <BodyTdDesign>{props.BloodBag.CMV}</BodyTdDesign>
         <BodyTdDesign>{props.BloodBag.Babesia}</BodyTdDesign>
         <BodyTdDesign>{props.BloodBag.BacterialContamination}</BodyTdDesign>
-        <BodyTdDesign>{props.BloodBag.pending}</BodyTdDesign>
-                
+        <BodyTdDesign>{props.BloodBag.pending}</BodyTdDesign>      
     </tr>
     );
 };

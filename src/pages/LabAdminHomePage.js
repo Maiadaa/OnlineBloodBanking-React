@@ -20,6 +20,7 @@ const LabAdminHomePage = () =>
             optionName: 'View Blood Inventory',
             optionDesc: 'View available blood bags in your hospital inventory'
         }
+        
     ]
 
     const onButtonClickHandler = () =>

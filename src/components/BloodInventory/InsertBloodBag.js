@@ -1,13 +1,16 @@
+
 import { useForm } from 'react-hook-form';
 import TextInput from '../../UI/form/TextInput';
 import TextAreaInput from '../../UI/form/TextAreaInput';
 import SelectInput from '../../UI/form/SelectInput';
 import FormInputError from '../../UI/form/FormInputError';
-
+import { useNavigate } from 'react-router-dom';
+import AuthContext from '../store/authContext';
+import React, { useContext } from 'react';
 const InsertBloodBag = (props) =>
 {
   const { register, handleSubmit, formState } = useForm();
-
+  const navigate = useNavigate();
 
 const hostpitalID = "638e7c0f8dce3f12d68269dd";
   const submitHandler = async (formData) => {
@@ -28,6 +31,7 @@ const hostpitalID = "638e7c0f8dce3f12d68269dd";
         if (!response.ok) {
           throw Error(data.error);
         }
+        navigate('/LabAdminMenu');
   
         console.log(data);
       } catch (err) {

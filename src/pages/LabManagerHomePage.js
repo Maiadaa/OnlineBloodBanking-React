@@ -23,7 +23,13 @@ const LabManagerHomePage = () =>
             imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
             optionName: 'View Doctors Requests',
             optionDesc: 'View blood bag requests made by doctors within you hospital'
-        }
+        },
+        {
+            optionID : 4,
+            imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
+            optionName: 'Create Lab Admin Account',
+            optionDesc: 'Create Lab Admin Accounts to manage blood bag insertions'
+        },
     ]
 
     const onButtonClickHandler = () =>

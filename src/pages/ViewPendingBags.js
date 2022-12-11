@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react";
-import ViewInventoryList from "../components/BloodInventory/ViewInventoryList";
+import ViewPendingBagsList from "../components/BloodInventory/ViewPendingBagsList";
 
-const ViewInventoryPage = () => {
+const ViewPendingBagsPage = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [BloodBags, setBloodBags] = useState([]);
     const hospitalID = "638e7c0f8dce3f12d68269dd";
@@ -10,7 +10,7 @@ const ViewInventoryPage = () => {
         const fetchSignal = fetchAbortController.signal;
         const fetchBloodBags = async () => {
             try{
-            const response = await fetch('http://localhost:3000/BloodBag/ViewAcceptedBloodBagsInHospital/638e7c0f8dce3f12d68269dd' ,{
+            const response = await fetch('http://localhost:3000/BloodBag/ViewPendingBloodBagsInHospital/638e7c0f8dce3f12d68269dd' ,{
                 signal: fetchSignal
             });
             const data = await response.json();
@@ -29,7 +29,7 @@ const ViewInventoryPage = () => {
         };
     
     },
-    []
+    [BloodBags]
     );
     if(isLoading){
         return (<p>please wait while we are loading data...</p>);
@@ -37,10 +37,10 @@ const ViewInventoryPage = () => {
     
     return (
         <div>
-            <h1 className=" text-center text-2xl font-bold">Accepted Blood Bags available in your hospital</h1>
-            <ViewInventoryList BloodBags={BloodBags}/>
+            <h1 className=" text-center text-2xl font-bold">Pending Blood Insertion Requests</h1>
+            <ViewPendingBagsList BloodBags={BloodBags}/>
         </div>
     );
 };
 
-export default ViewInventoryPage;
+export default ViewPendingBagsPage;
