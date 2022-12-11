@@ -1,20 +1,20 @@
 import { useForm } from 'react-hook-form';
-import TextInput from '../../UI/form/ModifyForm/TextInput';
-import FormInputError from '../../UI/form//ModifyForm/FormInputError';
+import TextInput from '../../UI/form/TextInput';
+import FormInputError from '../../UI/form/FormInputError';
 import SelectInput from '../../UI/form/SelectInput';
 import { useNavigate } from 'react-router-dom';
-
+import AuthContext from '../store/authContext';
+import React, { useContext } from 'react';
 
 const UpdateLabManagerAccount = (props) => {
     const { register, handleSubmit, formState } = useForm();
-    const navigate = useNavigate();
-    const hospitalsOptions = props.hospitals.map((h) => {
-        return {name: h.name, id: h._id};
-    });
-    const LabManagerId = props.labManagerId;
+
+    const authContext = useContext(AuthContext);
+    const LabManagerId = authContext.id;
     const submitHandler = async (formData) => {
+      console.log(LabManagerId);
         try {   
-          const response = await fetch('http://localhost:3000/userAccount/auth/UpdateSuperAdmin/' + LabManagerId, {
+          const response = await fetch('http://localhost:3000/auth/userAccount/UpdateLabManager/' + LabManagerId, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
@@ -27,10 +27,8 @@ const UpdateLabManagerAccount = (props) => {
           
           if (!response.ok) {
             throw Error(data.error);
-          }else{
-            navigate(`/getAllPatients`);
           }
-          
+          console.log("done");
         } catch (err) {
           console.log(err.message);
         }
@@ -42,7 +40,7 @@ const UpdateLabManagerAccount = (props) => {
           <TextInput 
             type = "text"
             name = "name"
-            placeholder = "Enter Super Admin new name"
+            placeholder = "Enter lab manager new name"
             register={register}
             //fdefaultValue = {props.superAdmin.name}
             validation={{ required: true }}
@@ -53,7 +51,7 @@ const UpdateLabManagerAccount = (props) => {
           <TextInput 
             type = "text"
             name = "email"
-            placeholder = "Enter Super Admin new email"
+            placeholder = "Enter lab manager new email"
             register={register}
             //defaultValue = {props.superAdmin.email}
             validation={{ required: true }}
@@ -64,7 +62,7 @@ const UpdateLabManagerAccount = (props) => {
           <TextInput 
             type = "text"
             name = "phoneNumber"
-            placeholder = "Enter Super Admin new phoneNumber"
+            placeholder = "Enter lab manager new phoneNumber"
             register={register}
             //defaultValue = {props.superAdmin.phoneNumber}
             validation={{ required: true }}
@@ -75,7 +73,7 @@ const UpdateLabManagerAccount = (props) => {
           <TextInput 
             type = "text"
             name = "username"
-            placeholder = "Enter Super Admin new username"
+            placeholder = "Enter lab manager new username"
             register={register}
             //defaultValue = {props.superAdmin.username}
             validation={{ required: true }}
@@ -86,23 +84,13 @@ const UpdateLabManagerAccount = (props) => {
           <TextInput 
             type = "text"
             name = "password"
-            placeholder = "Enter Super Admin new password"
+            placeholder = "Enter lab manager new password"
             register={register}
             //defaultValue = {props.superAdmin.password}
             validation={{ required: true }}
           />
           {formState.errors.Purpose && (
             <FormInputError>Patient purpose must not be empty</FormInputError>
-          )}
-          <SelectInput
-            label="Hospitals"
-            name= "hospital"
-            register={register}
-            options={hospitalsOptions}
-            validation={{ required: true }}
-          />
-          {formState.errors.hospitalId && (
-            <FormInputError>Patient hospital must not be empty</FormInputError>
           )}
       <button
         type="submit"

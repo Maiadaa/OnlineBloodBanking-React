@@ -1,10 +1,10 @@
-import AddDonationCampForm from "../components/Donations/AddDonationCampForm";
+/* import AddDonationCampForm from "../components/Donations/AddDonationCampForm"; */
 
 const AddDonationCampPage = () => {
 
     return (
         <div>
-            <AddDonationCampForm />
+            {/* <AddDonationCampForm /> */}
         </div>
     );
 };

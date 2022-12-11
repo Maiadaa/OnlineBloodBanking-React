@@ -1,10 +1,10 @@
-import AddReservationForm from "../components/Donations/AddReservationForm";
+/* import AddReservationForm from "../components/Donations/AddReservationForm"; */
 
 const AddReservationPage = () => {
 
     return (
         <div>
-            <AddReservationForm />
+            {/* <AddReservationForm /> */}
         </div>
     );
 };

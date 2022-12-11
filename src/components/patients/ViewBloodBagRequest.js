@@ -8,8 +8,23 @@ const ViewBloodBagRequest = (props) => {
     const ModifyRequestHandler = () => {
         navigate(`/patients/ModifyRequest/${props._id}/${props.Request._id}`);
     };
-    const AcceptRequestHandler = () => {
-        navigate(`/patients/AcceptRequest/${props._id}/${props.Request._id}`);
+    const AcceptRequestHandler = async () => {
+        try{
+            const response = await fetch('http://localhost:3000/patient/acceptBagRequest/' + props._id + '/' + props.Request._id,{
+                method: 'PUT',
+            });
+
+            const data = await response.json();
+
+            if(!response.ok){
+                throw Error(data.error);
+            }
+
+            console.log("done");
+
+        }catch(err){
+            alert("Failed to add Hospital");
+        }
     };
     /*const deleteBtnHandler = () => {
         navigate(`/hospitals/${props.hospital._id}`);

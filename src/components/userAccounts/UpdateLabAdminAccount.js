@@ -4,18 +4,17 @@ import FormInputError from '../../UI/form//ModifyForm/FormInputError';
 import SelectInput from '../../UI/form/SelectInput';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../store/authContext';
+import React, { useContext } from 'react';
 
 const UpdateLabAdminAccount = (props) => {
 
     const { register, handleSubmit, formState } = useForm();
     const navigate = useNavigate();
-    const hospitalsOptions = props.hospitals.map((h) => {
-        return {name: h.name, id: h._id};
-    });
-    const LabManagerId = AuthContext.id;
+    const authContext = useContext(AuthContext);
+    const LabAdmin = authContext.id;
     const submitHandler = async (formData) => {
         try {   
-          const response = await fetch('http://localhost:3000/auth/auth/UpdateSuperAdmin/' + LabManagerId, {
+          const response = await fetch('http://localhost:3000/auth/userAccount/UpdateLabAdmin/' + LabAdmin, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
@@ -28,10 +27,7 @@ const UpdateLabAdminAccount = (props) => {
           
           if (!response.ok) {
             throw Error(data.error);
-          }else{
-            navigate(`/getAllPatients`);
           }
-          
         } catch (err) {
           console.log(err.message);
         }
@@ -94,16 +90,6 @@ const UpdateLabAdminAccount = (props) => {
           />
           {formState.errors.Purpose && (
             <FormInputError>Patient purpose must not be empty</FormInputError>
-          )}
-          <SelectInput
-            label="Hospitals"
-            name= "hospital"
-            register={register}
-            options={hospitalsOptions}
-            validation={{ required: true }}
-          />
-          {formState.errors.hospitalId && (
-            <FormInputError>Patient hospital must not be empty</FormInputError>
           )}
       <button
         type="submit"

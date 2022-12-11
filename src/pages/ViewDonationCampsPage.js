@@ -1,4 +1,4 @@
-import DonationsList from '../components/Donations/DonationsList';
+//import DonationsList from '../components/Donations/DonationsList';
 import { useEffect, useState } from 'react';
 
 const ViewDonationCampsPage = (props) => {
@@ -44,7 +44,7 @@ const ViewDonationCampsPage = (props) => {
 
     return (
         <div className="flex flex-col items-center justify-center">
-            <DonationsList camps={camps} />
+            {/* <DonationsList camps={camps} /> */}
         </div>
     );
 };

@@ -17,7 +17,6 @@ import AuthProvider from './components/store/AuthProvider';
 import PatientsPage from "./pages/patientsPage";
 import AddPatientPage from "./pages/AddPatientPage";
 import ViewPatientRequests from "./pages/ViewPatientRequests";
-import AcceptPatientRequests from "./pages/AcceptRequestPage";
 import UpdateSuperAdminPage from "./pages/UpdateSuperAdminPage";
 import UpdateLabManagerPage from "./pages/UpdateLabManagerPage";
 import UpdateLabAdminPage from "./pages/UpdateLabAdminPage";
@@ -104,11 +103,6 @@ function App() {
             <Route path="/patients/ModifyRequest/:patientId/:requestId" element={
               <div className="flex justify-center">
                 <ModifyRequestPage />
-              </div>
-            } />
-            <Route path="/patients/AcceptRequest/:patientId/:requestId" element={
-              <div className="flex justify-center">
-                <AcceptPatientRequests />
               </div>
             } />
             <Route path="/superAdmin/Update" element={
