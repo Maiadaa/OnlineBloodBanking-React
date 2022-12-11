@@ -9,10 +9,10 @@ const DonationsCard = (props) => {
     const navigate = useNavigate();
  
     const viewBtnHandler = () => {
-        navigate(`/donations/DonationCamps/${props.donation._id}`);
+        navigate(`/Donations/DonationCamps/${props.donation._id}`);
     };
     const editBtnHandler = () => {
-        navigate(`/donations/addDonationCamp/${props.donation._id}`);
+        navigate(`/Donations/addDonationCamp/${props.donation._id}`);
     };
 
     const deleteBtnHandler = async () => {
