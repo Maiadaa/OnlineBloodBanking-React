@@ -8,10 +8,10 @@ const ViewPatients = (props) => {
     const viewRequestHandler = () => {
         navigate(`/patients/viewReuest/${props.Patient._id}`);
     };
-    /*const editBtnHandler = () => {
-        navigate(`/hospitals/editHospital/${props.hospital._id}`);
+    const editBtnHandler = () => {
+        navigate(`/patient/Update/${props.Patient._id}`);
     };
-    const deleteBtnHandler = () => {
+    /*const deleteBtnHandler = () => {
         navigate(`/hospitals/${props.hospital._id}`);
     };*/
     return(
@@ -25,7 +25,7 @@ const ViewPatients = (props) => {
                 <BodyTdDesign>{props.Patient.BloodType}</BodyTdDesign>
                 <BodyTdDesign>{props.Patient.hospitalId}</BodyTdDesign>
                 <BodyTdDesign><button onClick={viewRequestHandler}>View Request</button></BodyTdDesign>
-                <BodyTdDesign><a>Update</a></BodyTdDesign>
+                <BodyTdDesign><button onClick={editBtnHandler}>Update</button></BodyTdDesign>
             </tr>
     );
 };

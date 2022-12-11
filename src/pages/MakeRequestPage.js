@@ -28,7 +28,7 @@ const MakeRequestPage = () => {
         };
     
     },
-    []
+    [Patients]
     );
     if(isLoading){
         return (<p>please wait whilce we are loading data...</p>);

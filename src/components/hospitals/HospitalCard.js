@@ -3,6 +3,7 @@ import Card from '../../UI/cards/Card';
 import CardActions from '../../UI/cards/CardActions';
 import CardBody from '../../UI/cards/CardBody';
 import CardHeader from '../../UI/cards/CardHeader';
+import Popup from './hospitalAccount/PopUp';
 
 const HospitalCard = (props) => {
     // use the navigate function provided by the useNavigate react router hook

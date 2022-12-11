@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PatientsPage from "./pages/PatientsPage";
+import PatientsPage from "./pages/patientsPage";
 import AddPatientPage from "./pages/AddPatientPage";
 import SigninPage from "./pages/SigninPage";
 import SignupPage from "./pages/SignupPage";
@@ -18,11 +18,13 @@ import AuthProvider from './components/store/AuthProvider';
 import UpdateSuperAdminPage from "./pages/UpdateSuperAdminPage";
 import UpdateLabManagerPage from "./pages/UpdateLabManagerPage";
 import UpdateLabAdminPage from "./pages/UpdateLabAdminPage";
-import AddDonationCampPage from "./page/AddDonationCampPage";
-import AddReservationPage from "./page/AddReservationPage";
-import DonationCampsPage from "./pages/DonationCampsPage";
-import DonationsPage from "./pages/DonationsPage";
-import ReservationHistoryPage from "./pages/ReservationHistoryPage";
+//import AddDonationCampPage from "./page/AddDonationCampPage";
+//import AddReservationPage from "./page/AddReservationPage";
+//import DonationCampsPage from "./pages/DonationCampsPage";
+//import DonationsPage from "./pages/DonationsPage";
+//import ReservationHistoryPage from "./pages/ReservationHistoryPage";
+import DoctorHomePage from "./pages/DoctorHomePage";
+import ManagePatientPage from "./pages/ManagePatientsPage";
 
 
 function App() {
@@ -103,7 +105,7 @@ function App() {
               </div>
             } />
 
-            <Route path="/Donations" element={
+{/*             <Route path="/Donations" element={
               <div className="flex justify-center">
                 <DonationsPage />
               </div>
@@ -133,7 +135,7 @@ function App() {
               <div className="flex justify-center">
                 <DonationCampsPage />              
                 </div>
-            } />
+            } /> */}
 
             <Route path="/superAdmin/Update" element={
               <div className="flex justify-center">
@@ -150,9 +152,18 @@ function App() {
                 <UpdateLabAdminPage />
               </div>
             } />
+            <Route path="/patient/Update/:patientId" element={
+              <div className="flex justify-center">
+                <ManagePatientPage />
+              </div>
+            } />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/signin" element={<SigninPage />} />
-
+            <Route path="/DoctorHomePage" element={
+              <div className="flex justify-center">
+                <DoctorHomePage />
+              </div>
+            } />
           </Routes>
         </Layout>
       </BrowserRouter>
