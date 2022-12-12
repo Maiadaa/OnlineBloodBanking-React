@@ -32,7 +32,7 @@ const CreateLabAdminAccount = (props) =>
         if (!response.ok) {
           throw Error(data.error);
         }
-        //navigate('/signin');
+        navigate('/signin');
         console.log(data);
       } catch (err) {
         console.log(err.message);
