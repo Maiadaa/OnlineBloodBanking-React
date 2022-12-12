@@ -3,6 +3,7 @@ import HeaderDesign from "../../UI/tablesUI/HeaderDesign";
 import HeaderTh from "../../UI/tablesUI/HeaderTh";
 import BodyDesign from "../../UI/tablesUI/BodyDesign";
 import ViewPendingBags from "../BloodInventory/ViewPendingBags";
+
 const ViewPendingBagsList = (props) => {
     console.log(props.BloodBags);
     return(
@@ -52,7 +53,6 @@ const ViewPendingBagsList = (props) => {
                 <BodyDesign>
                     {
                         props.BloodBags.map((b) =>(
-                            console.log(b),
                             <ViewPendingBags BloodBag={b} key={b._id}/>
                         ))
                     }

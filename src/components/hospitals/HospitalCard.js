@@ -12,7 +12,7 @@ const HospitalCard = (props) => {
         navigate(`/hospitals/report/${props.hospital._id}`);
     };
     const editBtnHandler = () => {
-        navigate(`/hospitals/${props.hospital._id}`);
+        navigate(`/hospitals/editHospital/${props.hospital._id}`);
     };
     const deleteBtnHandler = async () => {
         try{

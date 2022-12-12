@@ -1,16 +1,22 @@
 import { useEffect,useState } from "react";
 import ViewPendingBagsList from "../components/BloodInventory/ViewPendingBagsList";
+import { useParams } from 'react-router-dom';
 
 const ViewPendingBagsPage = () => {
-    const [isLoading, setIsLoading] = useState(true);
     const [BloodBags, setBloodBags] = useState([]);
-    const hospitalID = "638e7c0f8dce3f12d68269dd";
+    const [isLoading, setIsLoading] = useState(true);
+
+    const params = useParams();
+    const hospitalId = params.hospitalId;
+
     useEffect(()=> {
         const fetchAbortController = new AbortController();
         const fetchSignal = fetchAbortController.signal;
+
         const fetchBloodBags = async () => {
             try{
-            const response = await fetch('http://localhost:3000/BloodBag/ViewPendingBloodBagsInHospital/638e7c0f8dce3f12d68269dd' ,{
+                console.log(hospitalId);
+            const response = await fetch('http://localhost:3000/BloodBag/ViewPendingBloodBagsInHospital/' + hospitalId ,{
                 signal: fetchSignal
             });
             const data = await response.json();
@@ -28,9 +34,7 @@ const ViewPendingBagsPage = () => {
             fetchAbortController.abort();
         };
     
-    },
-    [BloodBags]
-    );
+    },[BloodBags]);
     if(isLoading){
         return (<p>please wait while we are loading data...</p>);
     }

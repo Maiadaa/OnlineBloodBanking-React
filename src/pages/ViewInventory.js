@@ -2,6 +2,7 @@ import { useEffect,useState } from "react";
 import ViewInventoryList from "../components/BloodInventory/ViewInventoryList";
 import AuthContext from '../components/store/authContext';
 import React, { useContext } from 'react';
+
 const ViewInventoryPage = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [BloodBags, setBloodBags] = useState([]);
@@ -20,6 +21,7 @@ const ViewInventoryPage = () => {
                 throw Error(data.error);
             }
             setBloodBags(data.output);
+            
             setIsLoading(false);
             }catch(err){
                 console.log(err.message);
@@ -31,7 +33,7 @@ const ViewInventoryPage = () => {
         };
     
     },
-    []
+    [BloodBags]
     );
     if(isLoading){
         return (<p>please wait while we are loading data...</p>);

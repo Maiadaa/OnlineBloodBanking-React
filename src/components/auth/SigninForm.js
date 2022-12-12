@@ -51,6 +51,9 @@ const SigninForm = () => {
         // navigate to the home page
         navigate('/SuperAdminHomePage');
       }
+
+      console.log(formData);
+
     } catch (err) {
       console.log(err.message);
     }

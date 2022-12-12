@@ -8,7 +8,7 @@ const ViewPendingBags = (props) => {
               headers: {
                 'Content-Type': 'application/json'
                 //Authorization: `BEARER ${authContext.token}`
-              },
+              }
             });
             const data = await response.json();
             
@@ -55,13 +55,13 @@ const ViewPendingBags = (props) => {
         <BodyTdDesign>{String(props.BloodBag.CMV)}</BodyTdDesign>
         <BodyTdDesign>{String(props.BloodBag.Babesia)}</BodyTdDesign>
         <BodyTdDesign>{String(props.BloodBag.BacterialContamination)}</BodyTdDesign>
-        
-<BodyTdDesign className='flex'>
-        <button className='bg-transparent hover:bg-green-600 text-green-600 font-semibold hover:text-white py-2 px-4 border border-green-600 hover:border-transparent rounded' onClick={AcceptHandler}>Accept</button>
-         {"     "} {"     "}
-        <button className='bg-transparent hover:bg-red-600 text-red-600 font-semibold hover:text-white py-2 px-4 border border-red-600 hover:border-transparent rounded'onClick={RejectHandler}>Reject</button>
+
+        <BodyTdDesign className='flex'>
+          <button className='bg-transparent hover:bg-green-600 text-green-600 font-semibold hover:text-white py-2 px-4 border border-green-600 hover:border-transparent rounded' onClick={AcceptHandler}>Accept</button>
+          {"     "} {"     "}
+          <button className='bg-transparent hover:bg-red-600 text-red-600 font-semibold hover:text-white py-2 px-4 border border-red-600 hover:border-transparent rounded' onClick={RejectHandler}>Reject</button>
         </BodyTdDesign>
-    </tr>
+      </tr>
     );
 };
 export default ViewPendingBags;

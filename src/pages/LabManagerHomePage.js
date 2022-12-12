@@ -1,8 +1,13 @@
 import { useState } from "react";
 import MenuList from "../components/BloodInventory/MenuList";
+import AuthContext from '../components/store/authContext';
+import React, { useContext } from 'react';
+
 const LabManagerHomePage = () => 
 {
     const [options, setOptions] = useState([]);
+    const authContext = useContext(AuthContext);
+    const hospitalId = authContext.hospitalId;
 
     const optionsArray = 
     [
@@ -11,14 +16,14 @@ const LabManagerHomePage = () =>
             imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
             optionName: 'View Pending Requests',
             optionDesc: 'View all pending blood bag insertion requests submited by your hospital Lab Admin',
-            pageLink: '/ViewPendingBags'
+            pageLink: '/ViewPendingBags/' + hospitalId
         },
         {
             optionID : 2,
             imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
             optionName: 'View Blood Inventory',
             optionDesc: 'View available blood bags in your hospital inventory',
-            pageLink: '/ViewInventoryPage'
+            pageLink: '/ViewInventoryPage/'+ hospitalId
         },
         {
             optionID : 3,
@@ -32,7 +37,7 @@ const LabManagerHomePage = () =>
             imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
             optionName: 'Create Lab Admin Account',
             optionDesc: 'Create Lab Admin Accounts to manage blood bag insertions',
-            pageLink: '/CreateLabAdminAccount'
+            pageLink: '/CreateLabAdminAccount/' + hospitalId
         },
     ]
 

@@ -28,7 +28,8 @@ import InsertBloodBagPage from "./pages/InsertBloodBag";
 import ViewInventoryPage from "./pages/ViewInventory";
 import LabAdminHomePage from "./pages/LabAdminHomePage";
 import LabManagerHomePage from "./pages/LabManagerHomePage";
-import ViewPendingbags from "./pages/ViewPendingBags";
+import ViewPendingBagsPage from "./pages/ViewPendingBags";
+import CreateLabAdminAccountPage from "./pages/CreateLabAdminAccount";
 
 /* Mohamed Taie */
 import DonorHomePage from "./pages/DonorHomePage";
@@ -140,22 +141,26 @@ function App() {
                 <LabManagerHomePage />
               </div>
             } />
-            <Route path="/InsertBloodBag" element={
+            <Route path="/InsertBloodBag/:hospitalId" element={
               <div className="flex justify-center">
                 <InsertBloodBagPage /> 
               </div>
             } />
-            <Route path="/ViewInventoryPage" element={
+            <Route path="/ViewInventoryPage/:hospitalId" element={
               <div className="flex justify-center">
                 <ViewInventoryPage />
               </div>
             } />
-            <Route path="/ViewPendingBags" element={
+            <Route path="/ViewPendingBags/:hospitalId" element={
               <div className="flex justify-center">
-                <ViewPendingbags />
+                <ViewPendingBagsPage />
               </div>
             } />
-            {/* ViewPendingRequests */}
+            <Route path="/CreateLabAdminAccount/:hospitalId" element={
+              <div className="flex justify-center">
+                <CreateLabAdminAccountPage />
+              </div>
+            } />
             
             {/* Mohamed Taie */}
             <Route path="/DonorHomePage" element={
