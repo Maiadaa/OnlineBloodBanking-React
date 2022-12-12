@@ -10,7 +10,7 @@ const ViewBloodBagRequest = (props) => {
     };
     const AcceptRequestHandler = async () => {
         try{
-            const response = await fetch('https://bloodera.azurewebsites.net/patient/acceptBagRequest/' + props._id + '/' + props.Request._id,{
+            const response = await fetch('https://onlinebloodbank.azurewebsites.net/patient/acceptBagRequest/' + props._id + '/' + props.Request._id,{
                 method: 'PUT',
             });
 

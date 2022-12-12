@@ -11,7 +11,7 @@ const InsertBloodBagPage = () =>{
       const fetchSignal = fetchAbortController.signal;
       const fetchBloodBags = async () => {
           try{
-            const response = await fetch('https://bloodera.azurewebsites.net/hospitals',{
+            const response = await fetch('https://onlinebloodbank.azurewebsites.net/hospitals',{
                 signal: fetchSignal
             });
           const data = await response.json();

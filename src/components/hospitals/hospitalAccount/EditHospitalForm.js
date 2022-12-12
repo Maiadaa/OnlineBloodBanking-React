@@ -17,7 +17,7 @@ const EditHospitalForm = () =>{
 
     const submitHandler = async (formData) => {
         try{
-            const response = await fetch(`https://bloodera.azurewebsites.net/hospitals/editHospital/${hospitalID}`,{
+            const response = await fetch(`https://onlinebloodbank.azurewebsites.net/hospitals/editHospital/${hospitalID}`,{
                 method:'PUT',
                 headers:{
                     'Content-Type': 'application/json'

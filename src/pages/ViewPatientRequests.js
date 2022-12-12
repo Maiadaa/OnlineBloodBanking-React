@@ -14,7 +14,7 @@ const ViewPatientRequests = () => {
         const fetchSignal = fetchAbortController.signal;
         const fetchPatients = async () => {
             try{
-            const response = await fetch('https://bloodera.azurewebsites.net/patient/viewRequest/' + id,{
+            const response = await fetch('https://onlinebloodbank.azurewebsites.net/patient/viewRequest/' + id,{
                 signal: fetchSignal
             });
             const data = await response.json();

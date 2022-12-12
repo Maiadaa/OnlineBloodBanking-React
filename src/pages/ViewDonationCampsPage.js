@@ -12,7 +12,7 @@ const ViewDonationCampsPage = (props) => {
         const fetchCamps = async () => {
             try {
                 // send HTTP GET request 
-                const response = await fetch('https://bloodera.azurewebsites.net/donations/Retrieve-donation-camps', {
+                const response = await fetch('https://onlinebloodbank.azurewebsites.net/donations/Retrieve-donation-camps', {
                     signal: fetchSignal
                 });
                 // parse returned data 

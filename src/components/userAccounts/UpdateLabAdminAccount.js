@@ -14,7 +14,7 @@ const UpdateLabAdminAccount = (props) => {
     const LabAdmin = authContext.id;
     const submitHandler = async (formData) => {
         try {   
-          const response = await fetch('https://bloodera.azurewebsites.net/auth/userAccount/UpdateLabAdmin/' + LabAdmin, {
+          const response = await fetch('https://onlinebloodbank.azurewebsites.net/auth/userAccount/UpdateLabAdmin/' + LabAdmin, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'

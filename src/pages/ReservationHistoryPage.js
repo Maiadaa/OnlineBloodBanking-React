@@ -12,7 +12,7 @@ const ReservationHistoryPage = () => {
     const fetchReportDetails = async () => {
       try {
         const response = await fetch(
-          `https://bloodera.azurewebsites.net/donation/`, {
+          `https://onlinebloodbank.azurewebsites.net/donation/`, {
             signal: fetchSignal
           }
         );

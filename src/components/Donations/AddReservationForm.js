@@ -12,7 +12,7 @@ const AddReservationForm = () =>{
 
     const submitHandler = async (formData) => {
         try{
-            const response = await fetch('https://bloodera.azurewebsites.net/donations/addDonationCamp',{
+            const response = await fetch('https://onlinebloodbank.azurewebsites.net/donations/addDonationCamp',{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'

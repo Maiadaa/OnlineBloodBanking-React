@@ -18,7 +18,7 @@ const HospitalsPage = () => {
         const fetchHospitals = async () =>{
             try{
                 // send HTTP GET request 
-                const response = await fetch('https://bloodera.azurewebsites.net/hospitals',{
+                const response = await fetch('https://onlinebloodbank.azurewebsites.net/hospitals',{
                    signal: fetchSignal 
                 });
                 // parse returned data 

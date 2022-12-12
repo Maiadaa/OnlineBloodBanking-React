@@ -17,7 +17,7 @@ const ViewInventoryPage = () => {
             try{
                 
 
-                const response = await fetch(`https://bloodera.azurewebsites.net/BloodBag/ViewPendingBloodBagsInHospital/${hospitalID}`  ,{
+                const response = await fetch(`https://onlinebloodbank.azurewebsites.net/BloodBag/ViewPendingBloodBagsInHospital/${hospitalID}`  ,{
                 signal: fetchSignal
             });
             const data = await response.json();

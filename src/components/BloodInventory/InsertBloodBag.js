@@ -20,7 +20,7 @@ const hostpitalID = authContext.hospitalId;
         console.log(JSON.stringify(formData));
         formData.hospital = hostpitalID;
         formData.pending = 'true';
-        const response = await fetch('https://bloodera.azurewebsites.net/BloodBag/InsertBloodBag' , {
+        const response = await fetch('https://onlinebloodbank.azurewebsites.net/BloodBag/InsertBloodBag' , {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

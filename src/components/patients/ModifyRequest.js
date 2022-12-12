@@ -9,7 +9,7 @@ const ModifyRequest = (props) => {
 
     const submitHandler = async (formData) => {
         try {   
-          const response = await fetch('https://bloodera.azurewebsites.net/patient/modifyRequest/' + props.patientId + '/' + props.requestId, {
+          const response = await fetch('https://onlinebloodbank.azurewebsites.net/patient/modifyRequest/' + props.patientId + '/' + props.requestId, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'

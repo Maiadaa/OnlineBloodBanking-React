@@ -16,7 +16,7 @@ const HospitalCard = (props) => {
     };
     const deleteBtnHandler = async () => {
         try{
-            const response = await fetch(`https://bloodera.azurewebsites.net/hospitals/${props.hospital._id}`,{
+            const response = await fetch(`https://onlinebloodbank.azurewebsites.net/hospitals/${props.hospital._id}`,{
                 method:'DELETE',
                 headers:{
                     'Content-Type': 'application/json'

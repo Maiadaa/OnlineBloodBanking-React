@@ -22,7 +22,7 @@ const SignupForm = (props) => {
 
     const submitHandler = async (formData) => {
         try {
-            const response = await fetch('https://bloodera.azurewebsites.net/auth/signup', {
+            const response = await fetch('https://onlinebloodbank.azurewebsites.net/auth/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

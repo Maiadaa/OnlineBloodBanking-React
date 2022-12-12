@@ -13,7 +13,7 @@ const UpdateLabManagerAccount = (props) => {
     const submitHandler = async (formData) => {
       console.log(LabManagerId);
         try {   
-          const response = await fetch('https://bloodera.azurewebsites.net/auth/userAccount/UpdateLabManager/' + LabManagerId, {
+          const response = await fetch('https://onlinebloodbank.azurewebsites.net/auth/userAccount/UpdateLabManager/' + LabManagerId, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
