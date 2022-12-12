@@ -108,7 +108,7 @@ const EditHospitalForm = () =>{
                     )}
 
                     <button type = "submit" className="bg-white rounded-xl my-4 py-2 px-8 self-center">
-                        Add Hospital
+                        Submit
                     </button>
                 </form>
             </div>

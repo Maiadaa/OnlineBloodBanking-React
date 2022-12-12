@@ -36,9 +36,13 @@ const SigninForm = () => {
       if (!response.ok) {
         throw Error(data.error);
       }
-
+      if(data.role == "Super Admin"){
+        authContext.login(data.userId, data.username, data.jwt, data.role, "0");
+      }
+      else{
+        authContext.login(data.userId, data.username, data.jwt, data.role, data.hospitalId._id);
+      }
       // invoke the login function in our auth context
-      authContext.login(data.userId, data.username, data.jwt, data.role, data.hospitalId._id);
 
       if(data.role == "Lab Manager"){
         // navigate to the home page

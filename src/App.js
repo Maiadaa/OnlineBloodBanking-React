@@ -141,17 +141,17 @@ function App() {
                 <LabManagerHomePage />
               </div>
             } />
-            <Route path="/InsertBloodBag/:hospitalId" element={
+            <Route path="/InsertBloodBag" element={
               <div className="flex justify-center">
                 <InsertBloodBagPage /> 
               </div>
             } />
-            <Route path="/ViewInventoryPage/:hospitalId" element={
+            <Route path="/ViewInventoryPage" element={
               <div className="flex justify-center">
                 <ViewInventoryPage />
               </div>
             } />
-            <Route path="/ViewPendingBags/:hospitalId" element={
+            <Route path="/ViewPendingBags" element={
               <div className="flex justify-center">
                 <ViewPendingBagsPage />
               </div>

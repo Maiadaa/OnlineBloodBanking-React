@@ -6,14 +6,16 @@ import React, { useContext } from 'react';
 const ViewInventoryPage = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [BloodBags, setBloodBags] = useState([]);
+
     const authContext = useContext(AuthContext);
     const hospitalID = authContext.hospitalId;
     useEffect(()=> {
         const fetchAbortController = new AbortController();
         const fetchSignal = fetchAbortController.signal;
+        console.log(hospitalID);
         const fetchBloodBags = async () => {
             try{
-            const response = await fetch('http://localhost:3000/BloodBag/ViewAcceptedBloodBagsInHospital/' + hospitalID ,{
+                const response = await fetch('http://localhost:3000/BloodBag/ViewAcceptedBloodBagsInHospital/' + hospitalID ,{
                 signal: fetchSignal
             });
             const data = await response.json();

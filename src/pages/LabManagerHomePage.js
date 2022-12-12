@@ -16,14 +16,14 @@ const LabManagerHomePage = () =>
             imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
             optionName: 'View Pending Requests',
             optionDesc: 'View all pending blood bag insertion requests submited by your hospital Lab Admin',
-            pageLink: '/ViewPendingBags/' + hospitalId
+            pageLink: '/ViewPendingBags' 
         },
         {
             optionID : 2,
             imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
             optionName: 'View Blood Inventory',
             optionDesc: 'View available blood bags in your hospital inventory',
-            pageLink: '/ViewInventoryPage/'+ hospitalId
+            pageLink: '/ViewInventoryPage'
         },
         {
             optionID : 3,
