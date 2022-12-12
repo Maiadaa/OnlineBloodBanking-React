@@ -3,7 +3,7 @@ import BodyTdDesign from '../../UI/tablesUI/BodyTdDesign';
 const ViewPendingBags = (props) => {
     const AcceptHandler = async () => {
         try {
-            const response = await fetch('https://bloodera.azurewebsites.net/BloodBag/AcceptBloodBag/' + props.BloodBag._id, {
+            const response = await fetch('http://localhost:3000/BloodBag/AcceptBloodBag/' + props.BloodBag._id, {
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ const ViewPendingBags = (props) => {
     };
     const RejectHandler = async () => {
         try {
-            const response = await fetch('https://bloodera.azurewebsites.net/BloodBag/RemoveBloodBag/' + props.BloodBag._id, {
+            const response = await fetch('http://localhost:3000/BloodBag/RemoveBloodBag/' + props.BloodBag._id, {
               method: 'DELETE',
               headers: {
                 'Content-Type': 'application/json'

@@ -13,7 +13,7 @@ const ManagePatient = (props) => {
     });
     const submitHandler = async (formData) => {
         try {
-          const response = await fetch('https://bloodera.azurewebsites.net/patient/managePatient/' + props.Patient._id, {
+          const response = await fetch('http://localhost:3000/patient/managePatient/' + props.Patient._id, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'

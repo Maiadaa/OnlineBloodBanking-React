@@ -9,7 +9,7 @@ const MakeRequestPage = () => {
         const fetchSignal = fetchAbortController.signal;
         const fetchPatients = async () => {
             try{
-            const response = await fetch('https://bloodera.azurewebsites.net/patient',{
+            const response = await fetch('http://localhost:3000/patient',{
                 signal: fetchSignal
             });
             const data = await response.json();

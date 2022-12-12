@@ -12,7 +12,7 @@ const ReservationHistoryPage = (props) => {
         const fetchReservations = async () => {
             try {
                 // send HTTP GET request 
-                const response = await fetch('https://bloodera.azurewebsites.net/donations/Retrieve-Donor-reservation', {
+                const response = await fetch('http://localhost:3000/donations/Retrieve-Donor-reservation', {
                     signal: fetchSignal
                 });
                 // parse returned data 

@@ -16,7 +16,7 @@ const HospitalReportPage = () => {
     const fetchReportDetails = async () => {
       try {
         const response = await fetch(
-          `https://bloodera.azurewebsites.net/hospitals/report/${hospitalId}`, {
+          `http://localhost:3000/hospitals/report/${hospitalId}`, {
             signal: fetchSignal
           }
         );

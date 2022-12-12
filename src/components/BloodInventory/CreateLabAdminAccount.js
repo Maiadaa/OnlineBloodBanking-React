@@ -19,7 +19,7 @@ const CreateLabAdminAccount = (props) =>
       try {
         console.log(JSON.stringify(formData));
         formData.hospitalId = hospitalID;
-        const response = await fetch('https://bloodera.azurewebsites.net/auth/userAccount/CreateLabAdmin' , {
+        const response = await fetch('http://localhost:3000/auth/userAccount/CreateLabAdmin' , {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
