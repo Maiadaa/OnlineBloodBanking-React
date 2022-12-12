@@ -34,6 +34,8 @@ import DonorHomePage from "./pages/DonorHomePage";
 import ViewDonationCampsPage from "./pages/ViewDonationCampsPage";
 import AddReservationPage from "./pages/AddReservationPage";
 import AddDonationCampPage from "./pages/AddDonationCampPage";
+import ManagePatient from "./components/patients/ManagePatient";
+import ManagePatientPage from "./pages/ManagePatientsPage";
 
 function App() {
   return (
@@ -83,6 +85,11 @@ function App() {
             <Route path="/getAllPatients" element={
               <div className="flex justify-center">
                 <PatientsPage />
+              </div>
+            } />
+            <Route path="/patient/Update/:patientId" element={
+              <div className="flex justify-center">
+                <ManagePatientPage />
               </div>
             } />
             <Route path="/AddNewPatient" element={

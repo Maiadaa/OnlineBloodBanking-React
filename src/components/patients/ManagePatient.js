@@ -3,10 +3,11 @@ import TextInput from '../../UI/form/ModifyForm/TextInput';
 import TextAreaInput from '../../UI/form/ModifyForm/TextAreaInput';
 import SelectInput from '../../UI/form/SelectInput';
 import FormInputError from '../../UI/form/FormInputError';
+import { useNavigate } from 'react-router-dom';
 
 const ManagePatient = (props) => {
     const { register, handleSubmit, formState } = useForm();
-
+    const navigate = useNavigate();
     const hospitalsOptions = props.hospitals.map((h) => {
         return {name: h.name, id: h._id};
     });
@@ -24,8 +25,10 @@ const ManagePatient = (props) => {
           
           if (!response.ok) {
             throw Error(data.error);
+          }else{
+            navigate('/getAllPatients');
           }
-    
+          
           console.log(data);
         } catch (err) {
           console.log(err.message);
