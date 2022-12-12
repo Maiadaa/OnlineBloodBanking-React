@@ -7,12 +7,14 @@ import FormInputError from '../../UI/form/FormInputError';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../store/authContext';
 import React, { useContext } from 'react';
+
 const InsertBloodBag = (props) =>
 {
   const { register, handleSubmit, formState } = useForm();
   const navigate = useNavigate();
+  const authContext = useContext(AuthContext);
 
-const hostpitalID = "638e7c0f8dce3f12d68269dd";
+const hostpitalID = authContext.hospitalId;
   const submitHandler = async (formData) => {
       try {
         console.log(JSON.stringify(formData));

@@ -10,25 +10,29 @@ const LabManagerHomePage = () =>
             optionID : 1,
             imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
             optionName: 'View Pending Requests',
-            optionDesc: 'View all pending blood bag insertion requests submited by your hospital Lab Admin'
+            optionDesc: 'View all pending blood bag insertion requests submited by your hospital Lab Admin',
+            pageLink: '/ViewPendingBags'
         },
         {
             optionID : 2,
             imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
             optionName: 'View Blood Inventory',
-            optionDesc: 'View available blood bags in your hospital inventory'
+            optionDesc: 'View available blood bags in your hospital inventory',
+            pageLink: '/ViewInventoryPage'
         },
         {
             optionID : 3,
             imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
             optionName: 'View Doctors Requests',
-            optionDesc: 'View blood bag requests made by doctors within you hospital'
+            optionDesc: 'View blood bag requests made by doctors within you hospital',
+            pageLink: '/hospitals'
         },
         {
             optionID : 4,
             imgURL: 'https://img.freepik.com/premium-vector/red-blood-drop-icon-flat-design-vector-illustration-concept-donating-blood_118339-891.jpg?w=740',
             optionName: 'Create Lab Admin Account',
-            optionDesc: 'Create Lab Admin Accounts to manage blood bag insertions'
+            optionDesc: 'Create Lab Admin Accounts to manage blood bag insertions',
+            pageLink: '/CreateLabAdminAccount'
         },
     ]
 

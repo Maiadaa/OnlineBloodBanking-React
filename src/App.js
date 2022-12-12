@@ -28,6 +28,7 @@ import InsertBloodBagPage from "./pages/InsertBloodBag";
 import ViewInventoryPage from "./pages/ViewInventory";
 import LabAdminHomePage from "./pages/LabAdminHomePage";
 import LabManagerHomePage from "./pages/LabManagerHomePage";
+import ViewPendingbags from "./pages/ViewPendingBags";
 
 /* Mohamed Taie */
 import DonorHomePage from "./pages/DonorHomePage";
@@ -144,9 +145,14 @@ function App() {
                 <InsertBloodBagPage /> 
               </div>
             } />
-            <Route path="/" element={
+            <Route path="/ViewInventoryPage" element={
               <div className="flex justify-center">
                 <ViewInventoryPage />
+              </div>
+            } />
+            <Route path="/ViewPendingBags" element={
+              <div className="flex justify-center">
+                <ViewPendingbags />
               </div>
             } />
             {/* ViewPendingRequests */}

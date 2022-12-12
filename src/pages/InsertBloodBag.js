@@ -5,6 +5,7 @@ import InsertBloodBag from "../components/BloodInventory/InsertBloodBag"
 const InsertBloodBagPage = () =>{
     const [isLoading, setIsLoading] = useState(true);
     const [hospitals, setHospitals] = useState();
+    
     useEffect(()=> {
       const fetchAbortController = new AbortController();
       const fetchSignal = fetchAbortController.signal;

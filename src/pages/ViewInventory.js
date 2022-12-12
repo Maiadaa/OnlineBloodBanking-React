@@ -1,16 +1,18 @@
 import { useEffect,useState } from "react";
 import ViewInventoryList from "../components/BloodInventory/ViewInventoryList";
-
+import AuthContext from '../components/store/authContext';
+import React, { useContext } from 'react';
 const ViewInventoryPage = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [BloodBags, setBloodBags] = useState([]);
-    const hospitalID = "638e7c0f8dce3f12d68269dd";
+    const authContext = useContext(AuthContext);
+    const hospitalID = authContext.hospitalId;
     useEffect(()=> {
         const fetchAbortController = new AbortController();
         const fetchSignal = fetchAbortController.signal;
         const fetchBloodBags = async () => {
             try{
-            const response = await fetch('http://localhost:3000/BloodBag/ViewAcceptedBloodBagsInHospital/638e7c0f8dce3f12d68269dd' ,{
+            const response = await fetch('http://localhost:3000/BloodBag/ViewAcceptedBloodBagsInHospital/' + hospitalID ,{
                 signal: fetchSignal
             });
             const data = await response.json();
