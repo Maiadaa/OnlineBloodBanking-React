@@ -38,7 +38,7 @@ const SigninForm = () => {
       }
 
       // invoke the login function in our auth context
-      authContext.login(data.userId, data.username, data.jwt, data.role, data.hospitalId);
+      authContext.login(data.userId, data.username, data.jwt, data.role, data.hospitalId._id);
 
       if(data.role == "Lab Manager"){
         // navigate to the home page
@@ -52,7 +52,7 @@ const SigninForm = () => {
         navigate('/SuperAdminHomePage');
       }
 
-      console.log(formData);
+      console.log(data);
 
     } catch (err) {
       console.log(err.message);
