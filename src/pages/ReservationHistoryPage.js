@@ -12,7 +12,7 @@ const ReservationHistoryPage = () => {
     const fetchReportDetails = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/donation/`, {
+          `https://bloodera.azurewebsites.net/donation/`, {
             signal: fetchSignal
           }
         );

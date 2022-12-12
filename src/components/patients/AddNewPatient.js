@@ -14,7 +14,7 @@ const AddNewPatient = (props) => {
     const submitHandler = async (formData) => {
         try {
           formData.Request = [];
-          const response = await fetch('http://localhost:3000/patient', {
+          const response = await fetch('https://bloodera.azurewebsites.net/patient', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

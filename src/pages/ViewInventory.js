@@ -15,7 +15,7 @@ const ViewInventoryPage = () => {
         console.log(hospitalID);
         const fetchBloodBags = async () => {
             try{
-                const response = await fetch('http://localhost:3000/BloodBag/ViewAcceptedBloodBagsInHospital/' + hospitalID ,{
+                const response = await fetch('https://bloodera.azurewebsites.net/BloodBag/ViewAcceptedBloodBagsInHospital/' + hospitalID ,{
                 signal: fetchSignal
             });
             const data = await response.json();

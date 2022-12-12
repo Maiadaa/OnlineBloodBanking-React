@@ -12,7 +12,7 @@ const AddDonationCampForm = () =>{
 
     const submitHandler = async (formData) => {
         try{
-            const response = await fetch('http://localhost:3000/donations/addDonationCamp',{
+            const response = await fetch('https://bloodera.azurewebsites.net/donations/addDonationCamp',{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'

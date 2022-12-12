@@ -9,7 +9,7 @@ const CreateLabAdminAccountPage = () =>{
       const fetchSignal = fetchAbortController.signal;
       const fetchLabAdmins = async () => {
           try{
-            const response = await fetch('http://localhost:3000/hospitals',{
+            const response = await fetch('https://bloodera.azurewebsites.net/hospitals',{
                 signal: fetchSignal
             });
           const data = await response.json();
