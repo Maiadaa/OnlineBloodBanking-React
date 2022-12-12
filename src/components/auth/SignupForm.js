@@ -127,6 +127,14 @@ const SignupForm = (props) => {
             {formState.errors.phoneNumber && (
                 <FormInputError> Please enter a valid phone number </FormInputError>
             )}
+            
+            <label className="text-white font-bold">BloodType</label>
+            <TextInput
+                type="text"
+                name="bloodType"
+                register={register}
+                validation={{ required: false}}
+            />
 
 
             <button

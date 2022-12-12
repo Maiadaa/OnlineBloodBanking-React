@@ -36,7 +36,7 @@ const SigninForm = () => {
       if (!response.ok) {
         throw Error(data.error);
       }
-      if(data.role == "Super Admin"){
+      if(data.role == "Super Admin" || data.role == "Donor"){
         authContext.login(data.userId, data.username, data.jwt, data.role, "0");
       }
       else{
