@@ -16,7 +16,7 @@ const Navbar = () => {
     homeURL = "/SuperAdminHomePage";
     accountURL = "/superAdmin/Update";
   }else if (authContext.role == "Doctor"){
-    //homeURL = "/DoctorHomePage";
+    homeURL = "/DoctorHomePage";
     //accountURL = "/";
   }else if (authContext.role == "Donor"){
     homeURL = "/DonorHomePage";
