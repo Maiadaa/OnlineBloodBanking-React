@@ -12,7 +12,7 @@ const SigninForm = () => {
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const suppliersOptions = [
+  const roles = [
     { name: "Super Admin", value: "Super Admin" },
     {name: "Lab Manager", value: "Lab Manager" },
     {name: "Lab Admin", value: "Lab Admin"},
@@ -42,7 +42,14 @@ const SigninForm = () => {
 
       if(data.role == "Lab Manager"){
         // navigate to the home page
-        navigate('/');
+        navigate('/LabManagerMenu');
+      }   else   if(data.role == "Lab Admin"){
+        // navigate to the home page
+        navigate('/LabAdminMenu');
+      }
+      else   if(data.role == "Super Admin"){
+        // navigate to the home page
+        navigate('/SuperAdminHomePage');
       }
     } catch (err) {
       console.log(err.message);
@@ -63,7 +70,7 @@ const SigninForm = () => {
         type="text"
         register={register}
         validation={{ required: true }}
-        options={suppliersOptions}/>
+        options={roles}/>
       {formState.errors.role && (
         <FormInputError>Role must not be empty.</FormInputError>
       )}

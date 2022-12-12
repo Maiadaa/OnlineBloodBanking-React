@@ -1,8 +1,6 @@
 import { useForm } from 'react-hook-form';
 import TextInput from '../../UI/form/TextInput';
 import FormInputError from '../../UI/form/FormInputError';
-import SelectInput from '../../UI/form/SelectInput';
-import { useNavigate } from 'react-router-dom';
 import AuthContext from '../store/authContext';
 import React, { useContext } from 'react';
 

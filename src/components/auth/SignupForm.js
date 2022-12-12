@@ -1,9 +1,26 @@
 import { useForm } from 'react-hook-form';
 import FormInputError from '../../UI/form/FormInputError';
 import TextInput from '../../UI/form/TextInput';
+import RoleSelectInput from '../../UI/form/RoleSelectInput';
+import SelectInput from '../../UI/form/SelectInput';
+import { useNavigate } from 'react-router-dom';
 
-const SignupForm = () => {
+const SignupForm = (props) => {
     const { register, handleSubmit, formState } = useForm();
+    const navigate = useNavigate();
+
+    const hospitalsOptions = props.hospitals.map((h) => {
+        return { name: h.name, id: h._id };
+    });
+
+    const roles = [
+        { name: "Super Admin", value: "Super Admin" },
+        { name: "Lab Manager", value: "Lab Manager" },
+        { name: "Lab Admin", value: "Lab Admin" },
+        { name: "Doctor", value: "Doctor" },
+        { name: "Donor", value: "Donor" }
+    ];
+
 
     const submitHandler = async (formData) => {
         try {
@@ -22,6 +39,7 @@ const SignupForm = () => {
             }
 
             console.log(data);
+            navigate(`/signin`);
         } catch (err) {
             console.log(err.message);
         }
@@ -32,10 +50,29 @@ const SignupForm = () => {
             className="flex  flex-col p-10 gap-5 bg-gray-800 w-fit"
             onSubmit={handleSubmit(submitHandler)}
         >
+            <SelectInput
+                name="hospital"
+                register={register}
+                options={hospitalsOptions}
+                validation={{ required: true }}
+            />
+            {formState.errors.hospitalId && (
+                <FormInputError>Patient hospital must not be empty</FormInputError>
+            )}
+
+            <RoleSelectInput
+                className='rounded-lg min-w-[250px] p-2'
+                name="role"
+                type="text"
+                register={register}
+                validation={{ required: true }}
+                options={roles} />
+            {formState.errors.role && (
+                <FormInputError>Role must not be empty.</FormInputError>
+            )}
 
             <label className="text-white font-bold">Full Name</label>
             <TextInput
-                label="Name"
                 type="text"
                 name="name"
                 register={register}
@@ -47,7 +84,6 @@ const SignupForm = () => {
 
             <label className="text-white font-bold">Username</label>
             <TextInput
-                label="Username"
                 type="text"
                 name="username"
                 register={register}
@@ -59,7 +95,6 @@ const SignupForm = () => {
 
             <label className="text-white font-bold">Password</label>
             <TextInput
-                label="Password"
                 type="password"
                 name="password"
                 register={register}
@@ -71,7 +106,6 @@ const SignupForm = () => {
 
             <label className="text-white font-bold">Email Address</label>
             <TextInput
-                label="Email"
                 type="text"
                 name="email"
                 register={register}
@@ -87,7 +121,6 @@ const SignupForm = () => {
             )}
             <label className="text-white font-bold">Phone Number</label>
             <TextInput
-                label="Number"
                 type="number"
                 name="phoneNumber"
                 register={register}

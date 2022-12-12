@@ -39,14 +39,14 @@ const AddHospitalForm = () =>{
         <div>
             <div>
                 <form 
-                className="flex flex-col p-10 gap-5 bg-gray-800 w-fit"
+                className="flex flex-col p-10 gap-5 w-full bg-white shadow-2xl rounded-lg"
                 onSubmit={handleSubmit(submitHandler)}
                 >
-                    <label className="text-white font-bold">Hospital Name</label>
+                    <label className=" text-center text-2xl font-bold" >Add New Hospital</label>
                     <Textinput
-                    label="Name"
                     type="text"
                     name="name"
+                    placeholder = "Hospital Name"
                     register={register}
                     validation={{required:true}}
                     />
@@ -54,11 +54,10 @@ const AddHospitalForm = () =>{
                         <FormInputError> Hospital name must not be empty </FormInputError>
                     )}
 
-                    <label className="text-white font-bold">Hospital Address</label>
                     <Textinput
-                    label="Location"
                     type="text"
                     name="Address"
+                    placeholder = "Hospital Address"
                     register={register}
                     validation={{required:true}}
                     />
@@ -66,29 +65,26 @@ const AddHospitalForm = () =>{
                         <FormInputError> Hospital address must not be empty </FormInputError>
                     )}
 
-                    <label className="text-white font-bold">Hospital Email</label>
                     <Textinput
-                    label="Email"
-                    type="text"
-                    name="email"
+                    type = "text"
+                    name = "email"
+                    placeholder = "Hospital Email"
                     register={register}
-                    validation={{
-                        require:true, 
+                    validation={{required:true, 
                         pattern: {
                             value: /\S+@\S+\.\S+/,
                             message: "Entered value does not match email format"
                         }
                         }
-                    }/>
+                    }/> 
                     {formState.errors.email && (
                         <FormInputError> Please enter a valid email address </FormInputError>
                     )}
 
-                    <label className="text-white font-bold">Hospital Hotline</label>
                     <Textinput
-                    label="Hotline"
                     type="number"
                     name="hotline"
+                    placeholder="Hospital Hotline"
                     register={register}
                     validation={{required:true, min:5}}
                     />
@@ -96,17 +92,16 @@ const AddHospitalForm = () =>{
                         <FormInputError> Please enter a valid hotline number </FormInputError>
                     )}
 
-                    <label className="text-white font-bold">Hospital Logo URL</label>
                     <Textinput 
-                    label="Image"
                     type="text"
                     name="imageURL"
+                    placeholder = "Hospital Logo URL (Optional)"
                     register={register}
                     validation={{
-                            require:false, 
+                            required:false, 
                             pattern: {
                                 value: /\S\.\S+/,
-                                message: "Entered value does not match email format"
+                                message: "Entered value does not match URL format"
                             }
                         }
                     }/>
@@ -114,7 +109,7 @@ const AddHospitalForm = () =>{
                         <FormInputError> Please enter a valid URL </FormInputError>
                     )}
 
-                    <button type = "submit" className="bg-white rounded-xl my-4 py-2 px-8 self-center">
+                    <button type = "submit" className="text-white dark:bg-black cursor-pointer font-medium rounded-lg text-sm px-5 py-2.5 text-center w-1/2 place-self-center hover:bg-gray-400 hover:text-black">
                         Add Hospital
                     </button>
                 </form>

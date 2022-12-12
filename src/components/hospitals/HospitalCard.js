@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import Card from '../../UI/cards/card';
+import Card from '../../UI/cards/Card';
 import CardActions from '../../UI/cards/CardActions';
 import CardBody from '../../UI/cards/CardBody';
 import CardHeader from '../../UI/cards/CardHeader';
