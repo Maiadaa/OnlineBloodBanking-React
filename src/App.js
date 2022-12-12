@@ -38,6 +38,7 @@ import AddReservationPage from "./pages/AddReservationPage";
 import AddDonationCampPage from "./pages/AddDonationCampPage";
 import ManagePatient from "./components/patients/ManagePatient";
 import ManagePatientPage from "./pages/ManagePatientsPage";
+import DoctorHomePage from "./pages/DoctorHomePage";
 
 function App() {
   return (
@@ -181,6 +182,11 @@ function App() {
             <Route path="/addDonationCamp" element={
               <div className="flex justify-center">
                 <AddDonationCampPage />
+              </div>
+            } />
+            <Route path="/DoctorHomePage" element={
+              <div className="flex justify-center">
+                <DoctorHomePage />
               </div>
             } />
           </Routes>

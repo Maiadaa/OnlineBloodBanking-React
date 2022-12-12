@@ -44,16 +44,22 @@ const SigninForm = () => {
       }
       // invoke the login function in our auth context
 
-      if(data.role == "Lab Manager"){
+      if (data.role == "Lab Manager") {
         // navigate to the home page
         navigate('/LabManagerMenu');
-      }   else   if(data.role == "Lab Admin"){
+      } else if (data.role == "Lab Admin") {
         // navigate to the home page
         navigate('/LabAdminMenu');
       }
-      else   if(data.role == "Super Admin"){
+      else if (data.role == "Super Admin") {
         // navigate to the home page
         navigate('/SuperAdminHomePage');
+      } else if (data.role == "Doctor") {
+        // navigate to the home page
+        navigate('/DoctorHomePage');
+      } else if (data.role == "Donor") {
+        // navigate to the home page
+        navigate('/DonorHomePage');
       }
 
       console.log(data);

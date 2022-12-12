@@ -15,8 +15,6 @@ const SignupForm = (props) => {
 
     const roles = [
         { name: "Super Admin", value: "Super Admin" },
-        { name: "Lab Manager", value: "Lab Manager" },
-        { name: "Lab Admin", value: "Lab Admin" },
         { name: "Doctor", value: "Doctor" },
         { name: "Donor", value: "Donor" }
     ];
