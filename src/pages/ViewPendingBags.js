@@ -17,7 +17,7 @@ const ViewInventoryPage = () => {
             try{
                 
 
-                const response = await fetch(`http://localhost:3000/BloodBag/ViewPendingBloodBagsInHospital/639648820872f731e6cc1395`  ,{
+                const response = await fetch(`http://localhost:3000/BloodBag/ViewPendingBloodBagsInHospital/${hospitalID}`  ,{
                 signal: fetchSignal
             });
             const data = await response.json();

@@ -40,7 +40,7 @@ const SigninForm = () => {
         authContext.login(data.userId, data.username, data.jwt, data.role, "0");
       }
       else{
-        authContext.login(data.userId, data.username, data.jwt, data.role, data.hospitalId._id);
+        authContext.login(data.userId, data.username, data.jwt, data.role, data.hospitalId);
       }
       // invoke the login function in our auth context
 
