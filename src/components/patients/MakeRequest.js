@@ -13,7 +13,7 @@ const MakeRequest = (props) => {
     });
     const submitHandler = async (formData) => {
         try {   
-          const response = await fetch('http://localhost:3000/patient/requestBloodBag/' + formData.patientId, {
+          const response = await fetch('https://bloodera.azurewebsites.net/patient/requestBloodBag/' + formData.patientId, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'

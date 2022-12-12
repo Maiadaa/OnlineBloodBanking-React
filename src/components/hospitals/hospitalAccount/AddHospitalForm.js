@@ -13,7 +13,7 @@ const AddHospitalForm = () =>{
 
     const submitHandler = async (formData) => {
         try{
-            const response = await fetch('http://localhost:3000/hospitals/addHospital',{
+            const response = await fetch('https://bloodera.azurewebsites.net/hospitals/addHospital',{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'
