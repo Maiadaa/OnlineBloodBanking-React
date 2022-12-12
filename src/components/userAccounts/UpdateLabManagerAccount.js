@@ -3,10 +3,11 @@ import TextInput from '../../UI/form/TextInput';
 import FormInputError from '../../UI/form/FormInputError';
 import AuthContext from '../store/authContext';
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const UpdateLabManagerAccount = (props) => {
     const { register, handleSubmit, formState } = useForm();
-
+    const navigate = useNavigate();
     const authContext = useContext(AuthContext);
     const LabManagerId = authContext.id;
     const submitHandler = async (formData) => {
@@ -16,7 +17,6 @@ const UpdateLabManagerAccount = (props) => {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
-              //Authorization: `BEARER ${authContext.token}`
             },
             body: JSON.stringify(formData)
           });
@@ -26,7 +26,7 @@ const UpdateLabManagerAccount = (props) => {
           if (!response.ok) {
             throw Error(data.error);
           }
-          console.log("done");
+          navigate('/signin');
         } catch (err) {
           console.log(err.message);
         }
@@ -40,7 +40,7 @@ const UpdateLabManagerAccount = (props) => {
             name = "name"
             placeholder = "Enter lab manager new name"
             register={register}
-            //fdefaultValue = {props.superAdmin.name}
+            
             validation={{ required: true }}
           />
           {formState.errors.BloodType && (
@@ -51,7 +51,7 @@ const UpdateLabManagerAccount = (props) => {
             name = "email"
             placeholder = "Enter lab manager new email"
             register={register}
-            //defaultValue = {props.superAdmin.email}
+            
             validation={{ required: true }}
           />
           {formState.errors.Amount && (
@@ -62,7 +62,7 @@ const UpdateLabManagerAccount = (props) => {
             name = "phoneNumber"
             placeholder = "Enter lab manager new phoneNumber"
             register={register}
-            //defaultValue = {props.superAdmin.phoneNumber}
+            
             validation={{ required: true }}
           />
           {formState.errors.Date && (
@@ -73,7 +73,7 @@ const UpdateLabManagerAccount = (props) => {
             name = "username"
             placeholder = "Enter lab manager new username"
             register={register}
-            //defaultValue = {props.superAdmin.username}
+            
             validation={{ required: true }}
           />
           {formState.errors.Status && (
@@ -84,7 +84,7 @@ const UpdateLabManagerAccount = (props) => {
             name = "password"
             placeholder = "Enter lab manager new password"
             register={register}
-            //defaultValue = {props.superAdmin.password}
+            
             validation={{ required: true }}
           />
           {formState.errors.Purpose && (

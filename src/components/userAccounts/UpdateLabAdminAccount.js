@@ -28,6 +28,7 @@ const UpdateLabAdminAccount = (props) => {
           if (!response.ok) {
             throw Error(data.error);
           }
+          navigate('/signin');
         } catch (err) {
           console.log(err.message);
         }

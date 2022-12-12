@@ -3,10 +3,11 @@ import TextInput from '../../UI/form/TextInput';
 import TextAreaInput from '../../UI/form/TextAreaInput';
 import SelectInput from '../../UI/form/SelectInput';
 import FormInputError from '../../UI/form/FormInputError';
+import { useNavigate } from 'react-router-dom';
 
 const MakeRequest = (props) => {
     const { register, handleSubmit, formState } = useForm();
-
+    const navigate = useNavigate();
     const patientOptions = props.patients.map((p) => {
         return {name: p.name, id: p._id};
     });
@@ -16,7 +17,6 @@ const MakeRequest = (props) => {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
-              //Authorization: `BEARER ${authContext.token}`
             },
             body: JSON.stringify(formData)
           });
@@ -26,7 +26,7 @@ const MakeRequest = (props) => {
           if (!response.ok) {
             throw Error(data.error);
           }
-    
+          navigate('/getAllPatients');
           console.log(data);
         } catch (err) {
           console.log(err.message);
